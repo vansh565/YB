@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Yogendra Bharadwaj | Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- devicon for stack logos -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <!-- =====================
+       LOADER (2.5s)
+       Customize: CSS variables + #loaderLogo/#loaderText
+       ===================== -->
+  <div id="pageLoader" class="pageLoader" role="status" aria-label="Loading">
+    <div class="loaderCard glass">
+      <!-- LOADER LOGO: replace text with your logo image anytime (see CSS comments) -->
+      <div class="loaderLogo" id="loaderLogo">YB</div>
+      <div class="loaderText" id="loaderText">Loading…</div>
+      <div class="loaderBar"><div class="loaderBarIn" id="loaderBarIn"></div></div>
+      <div class="loaderHint muted">Tip: Change loader style in <b>style.css</b> (search: LOADER)</div>
+    </div>
+  </div>
+
+
+  <!-- Background layers -->
+  <div class="bg">
+    <div class="bg-grid"></div>
+    <div class="bg-aurora"></div>
+    <div class="bg-stars" aria-hidden="true"></div>
+    <div class="bg-vignette"></div>
+  </div>
+
+  <!-- Top progress -->
+  <div class="topbar">
+    <div class="progress" id="progress"></div>
+  </div>
+
+  <!-- Navbar -->
+  <header class="navwrap">
+    <nav class="nav glass" id="navbar">
+      <a class="brand" href="#home" aria-label="Go to Home">
+        <span class="brandMark brandMarkImg">
+          <!-- NAV LOGO: Put your logo image path in script.js (PROFILE.navLogo). Control size in style.css (search: NAV LOGO) -->
+          <img id="navLogoImg" class="brandLogoImg" alt="Logo" />
+          <span class="brandLogoFallback" aria-hidden="true">YB</span>
+        </span>
+        <span class="brandText">Yogendra Bharadwaj</span>
+      </a>
+
+      <!-- Search -->
+      <div class="navSearch">
+        <div class="searchWrap">
+          <span class="searchIcon">⌕</span>
+          <input id="siteSearch" class="searchInput" type="text" placeholder="Search section / keywords..." autocomplete="off" />
+        </div>
+        <div class="searchDrop" id="searchDrop" aria-hidden="true"></div>
+      </div>
+
+      <div class="navRight">
+        <!-- LANGUAGE: dropdown + flags (translate via code in script.js; extend dictionary as you wish) -->
+        <div class="langSelect" id="langSelect">
+          <button class="iconBtn langBtn" id="langBtn" aria-haspopup="listbox" aria-expanded="false" aria-label="Select language">
+            <span class="langIcon" aria-hidden="true">🌐</span>
+            <span class="langCode" id="langCode">EN</span>
+          </button>
+          <div class="langMenu" id="langMenu" role="listbox" aria-label="Language list"></div>
+        </div>
+
+        <button class="iconBtn" id="themeToggle" aria-label="Toggle theme">
+          <span id="themeIcon" class="themeIcon" aria-hidden="true"></span>
+        </button>
+        <button class="navToggle" id="navToggle" aria-label="Toggle menu">☰</button>
+      </div>
+
+      <div class="navLinks" id="navLinks">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#projects">Projects</a>
+        <a href="#certifications">certificate</a>
+
+        <!-- NEW -->
+        <a href="#media">Media</a>
+        <a href="#glimpse">Video Glimpse</a>
+        <a href="#blogs">Blogs</a>
+        <a href="#linkedin">LinkedIn</a>
+
+        <a href="#publications">Publications</a>
+        <a href="#patents">Patents</a>
+        <a href="#bookchapter">Book Chapter</a>
+
+        <a href="#editedbook">Edited Book</a>
+
+        <a href="#achievements" class="pill">Recognition</a>
+        <a href="#contact" class="pill outline">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section id="home" class="section hero hero-video-section">
+
+  <!-- HERO BACKGROUND VIDEO -->
+  <video class="hero-bg-video" autoplay muted loop playsinline>
+    <source src="https://raw.githubusercontent.com/bh-yogendra1/Yogendra-Bh_pm/main/hero%20section%20till%20about%20section.mp4" type="video/mp4">
+  </video>
+
+  <!-- DARK OVERLAY -->
+  <div class="hero-video-overlay"></div>
+
+    <div class="container heroGrid">
+
+      <div class="heroLeft">
+        <div class="kicker" data-i18n="hero_kicker">AI • Full-Stack • Research</div>
+
+       <h1 class="title">
+  <span data-i18n="hero_title_1">Building intelligent products + research work</span>
+  with a <span class="grad" data-i18n="hero_title_3">3D-modern</span>
+  <span data-i18n="hero_title_4">experience.</span>
+</h1>
+
+        <p class="subtitle" data-i18n="hero_subtitle">
+          Results-oriented AI Software Developer with hands-on experience in intelligent & web-based applications.
+          AI Specialist with strong research output (papers, patents, book work).
+        </p>
+
+        <div class="ctaRow">
+           <a class="btn primary" href="#projects" data-i18n="btn_view_projects">
+    View Projects
+  </a>
+           <a class="btn" href="#contact" data-i18n="btn_contact_me">
+    Contact Me
+  </a>
+           <a
+    class="btn ghost"
+    id="resumeBtn"
+    target="_blank"
+    rel="noopener"
+    data-i18n="btn_resume"
+  >
+    Download Resume
+  </a>
+</div>
+
+        <!-- 5 count-up cards -->
+        <div class="statsGrid" id="statsGrid"></div>
+
+        <!-- Hero highlight banner image (BIG) -->
+        <div class="heroBanner card glass tilt">
+          <div class="heroBannerIn">
+    <div class="hbTitle" data-i18n="hero_featured">
+      Featured Highlight
+    </div>
+            <div class="hbSub"data-i18n="hero_featured_sub">Add a big hero poster image here (code link)</div>
+          </div>
+          <img id="heroBannerImg" class="heroBannerImg" alt="Hero banner" />
+        </div>
+      </div>
+
+      <div class="heroRight">
+        <div class="tilt card3d glass heroCard">
+          <div class="cardGlow"></div>
+
+          <div class="cardInner">
+            <!-- Bigger circle photo -->
+            <div class="avatarRing avatarRingHuge">
+              <div class="avatar avatarHuge">
+                <img id="profileImg" src="" alt="Yogendra Bharadwaj" />
+                <!-- ONLINE DOT: green pulsing indicator (CSS: search "Online dot") -->
+                <span class="onlineDot" id="onlineDot" aria-hidden="true"></span>
+              </div>
+            </div>
+
+            <div class="heroCardInfo">
+  <h3 data-i18n="hero_profile_summary">Profile Summary</h3>
+  <ul class="bullets" id="profileBullets"></ul>
+</div>
+
+            <div class="heroBadges" id="heroBadges"></div>
+          </div>
+        </div>
+
+        <div class="floatingRow">
+          <div class="floatCard glass tilt-sm">
+  <div class="floatTitle" data-i18n="hero_highlight">Highlight</div>
+  <div class="floatValue" id="heroFloat1">15K+ LinkedIn followers</div>
+</div>
+          <div class="floatCard glass tilt-sm">
+  <div class="floatTitle" data-i18n="hero_now">Now</div>
+  <div class="floatValue" id="heroFloat2">M.Tech (AI) @ IIT Patna</div>
+</div>
+        </div>
+
+        <!-- RIGHT SIDE FEATURE HIGHLIGHT (same style as left banner)
+             Customize image in script.js: PROFILE.heroBannerImg2 -->
+        <div class="heroBanner card glass tilt heroBannerRight">
+          <div class="heroBannerIn">
+            <div class="hbTitle">Featured Highlight</div>
+            <div class="hbSub">Right-side highlight (customize)</div>
+          </div>
+          <img id="heroBannerImg2" class="heroBannerImg" alt="Hero banner 2" />
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section themed about-video-section">
+
+  <!-- ABOUT BACKGROUND VIDEO -->
+  <video class="about-bg-video" autoplay muted loop playsinline>
+    <source src="https://raw.githubusercontent.com/bh-yogendra1/Yogendra-Bh_pm/main/about%20section.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- DARK OVERLAY -->
+  <div class="about-video-overlay"></div>
+
+    <div class="container">
+      <div class="sectionHead">
+  <h2 data-i18n="sec_about">About</h2>
+  <p data-i18n="sec_about_sub">What I do and what I’m focused on.</p>
+</div>
+
+      <div class="grid2">
+        <div class="card glass tilt cardXL">
+          <h3>Who I am</h3>
+          <p class="p" id="aboutText"></p>
+
+          <div class="miniFacts">
+            <div class="miniFact">
+              <div class="mfLabel">Focus</div>
+              <div class="mfValue" id="aboutFocus"></div>
+            </div>
+            <div class="miniFact">
+              <div class="mfLabel">Tools</div>
+              <div class="mfValue" id="aboutTools"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card glass tilt cardXL">
+          <h3>Quick Links</h3>
+          <p class="muted"></p>
+          <div class="linkGrid" id="linkGrid"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+<section id="skills" class="section themed alt skills-video-section">
+
+  <!-- SKILLS BACKGROUND VIDEO -->
+  <video class="skills-bg-video" autoplay muted loop playsinline>
+    <source src="https://raw.githubusercontent.com/bh-yogendra1/Yogendra-Bh_pm/main/technical%20experties.mp4" type="video/mp4">
+   
+  </video>
+
+  <!-- DARK OVERLAY -->
+  <div class="skills-video-overlay"></div>
+
+    <div class="container">
+      <div class="sectionHead">
+  <h2 data-i18n="sec_skills">Technical Expertise</h2>
+  <p data-i18n="sec_skills_sub">Stack logos included.</p>
+</div>
+
+      <div class="grid3">
+        <div class="card glass tilt cardXL">
+          <h3>Languages & Core</h3>
+          <div class="logoGrid" id="skillsLang"></div>
+          <div class="softNote">Edit icons anytime in script.js</div>
+        </div>
+
+        <div class="card glass tilt cardXL">
+          <h3>Full-Stack</h3>
+          <div class="logoGrid" id="skillsStack"></div>
+          <div class="softNote">MERN + modern UI.</div>
+        </div>
+
+        <div class="card glass tilt cardXL">
+          <h3>Tools & Platforms</h3>
+          <div class="logoGrid" id="skillsTools"></div>
+          <div class="softNote">Deployment-ready.</div>
+        </div>
+      </div>
+          <!-- =====================
+           EXTRA SKILL CARDS (Scalable)
+           Add more cards by copying one block + new id.
+           CSS: search "SKILLS GRID"
+           ===================== -->
+      <div class="grid3 mt16">
+        <div class="card glass tilt cardXL">
+          <h3>AI / ML</h3>
+          <div class="logoGrid logoGridWide" id="skillsAI"></div>
+          <div class="softNote">12+ stacks supported (script.js)</div>
+        </div>
+
+        <div class="card glass tilt cardXL">
+          <h3>Cloud / DevOps</h3>
+          <div class="logoGrid logoGridWide" id="skillsCloud"></div>
+          <div class="softNote">Add your tools + platforms.</div>
+        </div>
+
+        <div class="card glass tilt cardXL">
+          <h3>Research / Tools</h3>
+          <div class="logoGrid logoGridWide" id="skillsResearch"></div>
+          <div class="softNote">Paper writing + tooling.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- EXPERIENCE -->
+  <section id="experience" class="section themed">
+    <div class="container">
+     <div class="sectionHead">
+  <h2 data-i18n="sec_experience">Work Experience</h2>
+  <p data-i18n="sec_experience_sub">Each card supports 2 images + certificate PDF + 2 link buttons (from code).</p>
+</div>
+
+      <div class="timeline" id="expTimeline"></div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+<section id="education" class="section themed alt edu-video-section">
+
+  <!-- Background Video -->
+  <video class="edu-bg-video" autoplay muted loop playsinline>
+    <source src="https://raw.githubusercontent.com/bh-yogendra1/Yogendra-Bh-portfolio-website-/cc7f8a1dfc90e2ebffed9d9f8b9460c6ba9d060c/education-iit%20p.mp4" type="video/mp4">
+  </video>
+
+  <!-- Dark overlay -->
+  <div class="edu-video-overlay"></div>
+
+    <div class="container">
+      <div class="sectionHead">
+  <h2 data-i18n="sec_education">Education</h2>
+  <p data-i18n="sec_education_sub">Logos + media slots from code.</p>
+</div>
+
+      <div class="grid2" id="eduGrid"></div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="section themed">
+    <div class="container">
+      <div class="sectionHead">
+  <h2 data-i18n="sec_projects">Projects</h2>
+  <p data-i18n="sec_projects_sub">6+ cards + auto-swap slider. Each project has 2 images + 2 links.</p>
+</div>
+
+      <!-- =====================
+           FIXED 9 PROJECT CARDS (3 categories × 3 cards)
+           Edit data in script.js: PROJECT_GRID_9
+           ===================== -->
+      <div class="projCats">
+        <div class="projCat">
+          <div class="projCatTitle">Project Category 1</div>
+          <div class="projCatGrid" id="projCat1"></div>
+        </div>
+
+        <div class="projCat">
+          <div class="projCatTitle">Project Category 2</div>
+          <div class="projCatGrid" id="projCat2"></div>
+        </div>
+
+        <div class="projCat">
+          <div class="projCatTitle">Project Category 3</div>
+          <div class="projCatGrid" id="projCat3"></div>
+        </div>
+      </div>
+
+      
+
+      <div class="projectWrap">
+        <button class="sliderBtn" id="projPrev" aria-label="Previous project">‹</button>
+
+        <div class="projectSlider" id="projectSlider">
+          <div class="projectTrack" id="projectTrack"></div>
+        </div>
+
+        <button class="sliderBtn" id="projNext" aria-label="Next project">›</button>
+      </div>
+
+      <div class="sliderDots" id="projDots"></div>
+    </div>
+  </section>
+
+  <!-- =====================
+       CERTIFICATIONS (NEW)
+       6 cards (3×2) + different slider style
+       ===================== -->
+  <section id="certifications" class="section themed alt">
+    <div class="container">
+     <div class="sectionHead">
+  <h2 data-i18n="sec_certificates">Certificates</h2>
+  <p data-i18n="sec_certificates_sub">6 featured certificates + slider (design is different from projects).</p>
+</div>
+      <div class="certGrid" id="certGrid"></div>
+
+      <div class="certSliderWrap">
+        <div class="certHeaderRow">
+          <div>
+            <div class="certSliderTitle">More certificates</div>
+            <div class="muted">Auto-scroll • customize in script.js</div>
+          </div>
+          <div class="certBtns">
+            <button class="certBtn" id="certPrev" aria-label="Previous certificate">‹</button>
+            <button class="certBtn" id="certNext" aria-label="Next certificate">›</button>
+          </div>
+        </div>
+        <div class="certSlider" id="certSlider">
+          <div class="certTrack" id="certTrack"></div>
+        </div>
+        <div class="sliderDots" id="certDots"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================
+       RECOMMENDATIONS (NEW)
+       Images + LinkedIn text
+       ===================== -->
+  <section id="
+  mmendations" class="section themed">
+    <div class="container">
+    <div class="sectionHead">
+  <h2 data-i18n="sec_recommendations">Recommendations</h2>
+  <p data-i18n="sec_recommendations_sub">External recommendation images + LinkedIn recommendations (add/edit in script.js).</p>
+</div>
+
+      <div class="recGrid" id="recGrid"></div>
+    </div>
+  </section>
+
+  <!-- MEDIA (NEW) -->
+  <section id="media" class="section themed alt">
+    <div class="container">
+     <div class="sectionHead">
+  <h2 data-i18n="sec_media">Media</h2>
+  <p data-i18n="sec_media_sub">Auto slider • hover zoom • title/subtitle + 5–7 lines (from code).</p>
+</div>
+
+      <div class="mediaSliderWrap">
+        <button class="sliderBtn" id="mediaPrev" aria-label="Previous media">‹</button>
+
+        <div class="mediaSlider" id="mediaSlider">
+          <div class="mediaTrack" id="mediaTrack"></div>
+        </div>
+
+        <button class="sliderBtn" id="mediaNext" aria-label="Next media">›</button>
+      </div>
+
+      <div class="sliderDots" id="mediaDots"></div>
+    </div>
+  </section>
+
+  <!-- VIDEO GLIMPSE (NEW) -->
+<section id="glimpse" class="section themed glimpse-section">
+  <div class="container">
+    <div class="sectionHead">
+      <h2>Video Glimpse</h2>
+      <p>A quick visual overview.</p>
+    </div>
+
+    <div class="videoFrame">
+      <video
+        class="glimpseVideo"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="auto"
+        controls>
+        <source src="https://raw.githubusercontent.com/bh-yogendra1/Yogendra-Bh_pm/main/video%20section.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+</section>
+
+
+  <!-- BLOGS (NEW) -->
+  <section id="blogs" class="section themed alt">
+    <div class="container">
+      <div class="sectionHead">
+  <h2 data-i18n="sec_blogs">Blogs</h2>
+  <p data-i18n="sec_blogs_sub">Local blogs + optional external RSS fetch (from code).</p>
+</div>
+
+      <div class="blogGrid" id="blogGrid"></div>
+    </div>
+  </section>
+
+  <!-- LINKEDIN POSTS (NEW) -->
+  <section id="linkedin" class="section themed">
+    <div class="container">
+      <div class="sectionHead">
+  <h2 data-i18n="sec_linkedin">LinkedIn Posts</h2>
+  <p data-i18n="sec_linkedin_sub">Last 4–5 posts cards (manual links or embed snippet).</p>
+</div>
+
+      <div class="listGrid" id="liGrid"></div>
+    </div>
+  </section>
+
+  <!-- PUBLICATIONS -->
+  <section id="publications" class="section themed alt">
+    <div class="container">
+      <div class="sectionHead">
+  <h2 data-i18n="sec_publications">Publications</h2>
+  <p data-i18n="sec_publications_sub">Each item: title/subtitle/meta + 5 lines + 2 buttons + 2 images (optional).</p>
+</div>
+      <div class="listGrid" id="pubList"></div>
+    </div>
+  </section>
+
+  <!-- PATENTS -->
+  <section id="patents" class="section themed">
+    <div class="container">
+    <div class="sectionHead">
+  <h2 data-i18n="sec_patents">Patents</h2>
+  <p data-i18n="sec_patents_sub">Each item: 2 buttons (View + Portal) + optional images.</p>
+</div>
+      <div class="listGrid" id="patentList"></div>
+    </div>
+  </section>
+
+  <!-- BOOK CHAPTER -->
+  <section id="bookchapter" class="section themed alt">
+    <div class="container">
+      <div class="sectionHead">
+  <h2 data-i18n="sec_bookchapter">Book Chapter</h2>
+  <p data-i18n="sec_bookchapter_sub">Each item has 2 buttons + description + optional images.</p>
+</div>
+      <div class="listGrid" id="chapterList"></div>
+    </div>
+  </section>
+
+  <!-- EDITED BOOK -->
+  <section id="editedbook" class="section themed">
+    <div class="container">
+     <div class="sectionHead">
+  <h2 data-i18n="sec_editedbook">Edited Book</h2>
+  <p data-i18n="sec_editedbook_sub">Each item has 2 buttons + description + optional images.</p>
+</div>
+      <div class="listGrid" id="editedBookList"></div>
+    </div>
+  </section>
+
+  <!-- ACHIEVEMENTS -->
+  <section id="achievements" class="section achievements">
+    <div class="container">
+      <div class="sectionHead fancy">
+  <h2 data-i18n="sec_achievements">Recognition & Achievements</h2>
+  <p data-i18n="sec_achievements_sub">9 achievements • BIG premium 3D cards • 2 images + 2 links each.</p>
+</div>
+      <div class="awardGrid" id="achGrid"></div>
+    </div>
+  </section>
+
+  <section id="contact" class="section contact-section">
+
+  <!-- Video full background -->
+  <div class="contact-video-bg-container">
+    <video 
+      class="contact-bg-video" 
+      autoplay 
+      muted 
+      loop 
+      playsinline 
+      preload="auto">
+      <source src="https://raw.githubusercontent.com/bh-yogendra1/Yogendra-Bh_pm/main/contactfooter%20left%20side.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  <!-- Overlay -->
+  <div class="contact-video-overlay"></div>
+
+  <!-- Content on top -->
+  <div class="container">
+
+    <h2>Contact</h2>
+    <p class="lead-text">Let's collaborate on AI, full-stack & research projects.</p>
+
+    <div class="contact-grid">
+
+      <!-- Quick Info card -->
+      <div class="card glass tilt contactInfo cardXL" id="contactCard">
+        <!-- Your quick info content / JS filled -->
+      </div>
+
+      <!-- Send Message card -->
+      <div class="card glass tilt contactFormCard cardXL">
+        <h3>Send a Message</h3>
+        <p class="muted">Form sizing fixed + responsive.</p>
+
+        <form class="form" onsubmit="return false;">
+          <div class="formRow2">
+            <input class="input" placeholder="Your Name" required />
+            <input class="input" placeholder="Your Email" required />
+          </div>
+          <input class="input" placeholder="Subject" />
+          <textarea class="input textarea" rows="7" placeholder="Your Message"></textarea>
+          <button class="btn primary formBtn" type="submit">Send (demo)</button>
+          <div class="formHint">Connect EmailJS / backend later.</div>
+        </form>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+  <!-- FOOTER -->
+<!-- FOOTER -->
+<footer class="footer">
+
+  <!-- GITHUB GLOBE BACKGROUND -->
+  <div class="ghGlobeBg ghGlobeBgFooter" aria-hidden="true">
+    <iframe 
+      class="ghGlobeFrame" 
+      src="https://janarosmonaliev.github.io/github-globe/" 
+      loading="lazy">
+    </iframe>
+    <div class="ghGlobeOverlay"></div>
+  </div>
+
+  <!-- FOOTER CONTENT -->
+  <div class="container footGrid">
+
+    <div class="footCol">
+      <div class="footBrand">
+        <span class="brandMark sm brandMarkImg">
+          <img id="footerLogoImg" class="brandLogoImg sm" alt="Logo" />
+          <span class="brandLogoFallback" aria-hidden="true">YB</span>
+        </span>
+        <div>
+          <div class="footName">Yogendra Bharadwaj</div>
+          <div class="footTag">AI • Full-Stack • Research</div>
+        </div>
+      </div>
+
+      <p class="footNote">© <span id="year"></span> Yogendra Bharadwaj.</p>
+
+      <div class="socialRow" id="socialRow"></div>
+
+      <div class="footQrRow">
+        <div class="footQr" id="footerQr"></div>
+      </div>
+
+      <a class="backTop" href="#home">↑ Back to top</a>
+    </div>
+
+    <div class="footCol">
+      <div class="footTitle">Quick Links</div>
+      <div class="footLinks" id="footerLinks"></div>
+
+      <div class="legalRow">
+        <a href="#" class="muted">Privacy</a>
+        <span class="muted">•</span>
+        <a href="#" class="muted">Terms</a>
+        <span class="muted">•</span>
+        <a href="#" class="muted">Sitemap</a>
+      </div>
+    </div>
+
+    <div class="footCol">
+      <div class="footTitle">Schedule Meeting</div>
+
+      <div class="meetGrid">
+        <input class="input" placeholder="Your Name" />
+        <input class="input" placeholder="Your Email" />
+        <input class="input" placeholder="Preferred Date & Time" />
+        <input class="input" placeholder="Topic" />
+        <button class="btn primary meetBtn">Request</button>
+      </div>
+
+      <div class="footDivider"></div>
+
+      <div class="footTitle">Newsletter</div>
+      <div class="newsRow">
+        <input class="input newsInput" placeholder="Email address" />
+        <button class="btn primary newsBtn">Subscribe</button>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+
+  <script src="scripts.js"></script>
+</body>
+</html>
