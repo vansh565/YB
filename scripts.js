@@ -14,7 +14,7 @@ const PROFILE = {
   scholar: "ADD_GOOGLE_SCHOLAR_LINK_HERE",
 
   // Images (local path or hosted URL)
-  profileImg: "yogi.jpg",
+  profileImg: "assets/profile.jpg",
   heroBannerImg: "assets/hero-banner.jpg", // BIG image above "Yogendra Bharadwaj / Profile Summary" area
 
   // Optional: Nav/Footer logo (set empty string to hide image and show "YB" fallback)
@@ -127,29 +127,6 @@ const SKILLS = {
 const EXPERIENCES = [
   {
     key: "geu",
-    role: "Research & Development Head",
-    org: " VAIMANIKA AEROSPACE,Patna",
-    date: "01/07/24- 25/07/25",
-    logo: "https://upload.wikimedia.org/wikipedia/en/thumb/6/66/Graphic_Era_University_Logo.png/240px-Graphic_Era_University_Logo.png",
-    points: [
-      "Led the end-to-end R&D lifecycle for aerospace and drone projects, translating defense and client requirements into system architecture, technical frameworks, procurement, prototyping, testing, and manufacturing.",
-      "Directed cross-functional R&D operations and managed the full development pipeline, coordinating engineers and vendors to deliver mission-ready prototypes and technology solutions.",
-      "Spearheaded defense-focused innovation by optimizing prototype testing and manufacturing workflows, improving development efficiency and system reliability."
-    ],
-    tags: ["Python","ML","GenAI","C","HTML/CSS/JS"],
-    media: [
-      { name: "Completion Certificate", type: "image", thumb: "assets/exp/geu-1.jpg", url: "assets/exp/geu-1.jpg" },
-      { name: "Recommendation Letter", type: "image", thumb: "assets/exp/geu-2.jpg", url: "assets/exp/geu-2.jpg" },
-      // You can add pdf too:
-      // { name:"Certificate PDF", type:"pdf", url:"assets/exp/geu-cert.pdf" }
-    ],
-    links: [
-      { label:"Organization Website", url:"https://www.geu.ac.in/" },
-      { label:"Internship Proof", url:"ADD_GEU_PROOF_LINK" }
-    ]
-  },
-    {
-    key: "geu",
     role: "Summer Intern",
     org: "Graphic Era Deemed University (GEU), Dehradun",
     date: "03/07/2023 – 16/08/2023",
@@ -191,7 +168,6 @@ const EXPERIENCES = [
       { label:"Internship Proof", url:"ADD_VISIT_PROOF_LINK" }
     ]
   }
-  
 ];
 
 // Education cards (logo + media)
@@ -289,9 +265,9 @@ const PROJECT_GRID_9 = {
   cat2Title: "Project Category 2",
   cat3Title: "Project Category 3",
   cat1: [
-    { title:"Sakha Chat", subtitle:"Short subtitle", stack:["AI","Python","NLP"], img:"assets/projects/g1.jpg", link1:{label:"GitHub", url:"ADD_LINK"}, link2:{label:"Live", url:"ADD_LINK"} },
-    { title:"Voice-Enabled AI Disease Prediction Model", subtitle:"Short subtitle", stack:["MERN","UI"], img:"assets/projects/g2.jpg", link1:{label:"GitHub", url:"ADD_LINK"}, link2:{label:"Live", url:"ADD_LINK"} },
-    { title:"Library Managment System", subtitle:"Short subtitle", stack:["IoT","Sensors"], img:"assets/projects/g3.jpg", link1:{label:"GitHub", url:"ADD_LINK"}, link2:{label:"Live", url:"ADD_LINK"} },
+    { title:"Project 1", subtitle:"Short subtitle", stack:["AI","Python","NLP"], img:"assets/projects/g1.jpg", link1:{label:"GitHub", url:"ADD_LINK"}, link2:{label:"Live", url:"ADD_LINK"} },
+    { title:"Project 2", subtitle:"Short subtitle", stack:["MERN","UI"], img:"assets/projects/g2.jpg", link1:{label:"GitHub", url:"ADD_LINK"}, link2:{label:"Live", url:"ADD_LINK"} },
+    { title:"Project 3", subtitle:"Short subtitle", stack:["IoT","Sensors"], img:"assets/projects/g3.jpg", link1:{label:"GitHub", url:"ADD_LINK"}, link2:{label:"Live", url:"ADD_LINK"} },
   ],
   cat2: [
     { title:"Project 4", subtitle:"Short subtitle", stack:["LLM","RAG"], img:"assets/projects/g4.jpg", link1:{label:"GitHub", url:"ADD_LINK"}, link2:{label:"Demo", url:"ADD_LINK"} },
@@ -309,12 +285,12 @@ const PROJECT_GRID_9 = {
 // NEW: Certificates (6 cards) + slider rail
 // =====================
 const CERTIFICATES = [
-  { title:"Best Researcher Award", subtitle:"Issuer • Year", img:"assets/cert/c1.jpg", link1:{label:"View", url:"ADD_LINK"}, link2:{label:"Verify", url:"ADD_LINK"} },
-  { title:"Invited as Session Chair and Lead Talk Speaker", subtitle:"Issuer • Year", img:"assets/cert/c2.jpg", link1:{label:"View", url:"ADD_LINK"}, link2:{label:"Verify", url:"ADD_LINK"} },
-  { title:"Honored to Speak at BIT Mesra’s Rocket Tech Workshop", subtitle:"Issuer • Year", img:"assets/cert/c3.jpg", link1:{label:"View", url:"ADD_LINK"}, link2:{label:"Verify", url:"ADD_LINK"} },
-  { title:"International Hackathon Excellence", subtitle:"Issuer • Year", img:"assets/cert/c4.jpg", link1:{label:"View", url:"ADD_LINK"}, link2:{label:"Verify", url:"ADD_LINK"} },
-  { title:"Reviewer, ICECET 2026 International Conference", subtitle:"Issuer • Year", img:"assets/cert/c5.jpg", link1:{label:"View", url:"ADD_LINK"}, link2:{label:"Verify", url:"ADD_LINK"} },
-  { title:"Invited Speaker, Nano S&T–2026 World Congress |", subtitle:"Issuer • Year", img:"assets/cert/c6.jpg", link1:{label:"View", url:"ADD_LINK"}, link2:{label:"Verify", url:"ADD_LINK"} },
+  { title:"Certificate 1", subtitle:"Issuer • Year", img:"assets/cert/c1.jpg", link1:{label:"View", url:"ADD_LINK"}, link2:{label:"Verify", url:"ADD_LINK"} },
+  { title:"Certificate 2", subtitle:"Issuer • Year", img:"assets/cert/c2.jpg", link1:{label:"View", url:"ADD_LINK"}, link2:{label:"Verify", url:"ADD_LINK"} },
+  { title:"Certificate 3", subtitle:"Issuer • Year", img:"assets/cert/c3.jpg", link1:{label:"View", url:"ADD_LINK"}, link2:{label:"Verify", url:"ADD_LINK"} },
+  { title:"Certificate 4", subtitle:"Issuer • Year", img:"assets/cert/c4.jpg", link1:{label:"View", url:"ADD_LINK"}, link2:{label:"Verify", url:"ADD_LINK"} },
+  { title:"Certificate 5", subtitle:"Issuer • Year", img:"assets/cert/c5.jpg", link1:{label:"View", url:"ADD_LINK"}, link2:{label:"Verify", url:"ADD_LINK"} },
+  { title:"Certificate 6", subtitle:"Issuer • Year", img:"assets/cert/c6.jpg", link1:{label:"View", url:"ADD_LINK"}, link2:{label:"Verify", url:"ADD_LINK"} },
 ];
 
 // Slider items (optional separate highlights)
@@ -372,7 +348,6 @@ const PUBLICATIONS = [
     btn1: { label: "View Paper", url: "ADD_PUBLICATION_LINK" },
     btn2: { label: "Publisher", url: "ADD_PUBLISHER_LINK" }
   }
-  
 ];
 
 const PATENTS = [
