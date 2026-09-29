@@ -1364,20 +1364,27 @@ body.light .stackPill{border:1px solid rgba(0,0,0,10%);background: rgba(0,0,0,04
     rgba(7,10,18,0.65),
     rgba(7,10,18,0.85)
   );
-  z-index: -2;
+  z-index: 1;
 }
 
 /* Content upar rahe */
 #education .container {
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
+
+.section-video-bg{position:relative;isolation:isolate;overflow:hidden}
+.section-video-bg .section-bg-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;filter:brightness(.55) saturate(.9);pointer-events:none}
+.section-video-bg .section-bg-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(7,10,18,.48),rgba(7,10,18,.70));pointer-events:none}
+.section-video-bg .container{position:relative;z-index:2}
+.section-video-bg::before,.section-video-bg::after{display:none}
 /* ===========================
    HERO BACKGROUND VIDEO
    =========================== */
 
 .hero-video-section{
   position: relative;
+  isolation: isolate;
   overflow: hidden;
 }
 
@@ -1385,11 +1392,13 @@ body.light .stackPill{border:1px solid rgba(0,0,0,10%);background: rgba(0,0,0,04
 .hero-bg-video{
   position: absolute;
   inset: 0;
-  
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
   z-index: 0;
+  opacity: 1;
+  pointer-events: none;
   filter: brightness(0.55) contrast(1.1);
 }
 
@@ -1509,9 +1518,15 @@ body.light .stackPill{border:1px solid rgba(0,0,0,10%);background: rgba(0,0,0,04
    ========================= */
 
 .glimpse-section{
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
   padding-top: 100px;
   padding-bottom: 100px;
 }
+.glimpse-section .container{position:relative;z-index:2}
+.glimpse-bg-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;filter:brightness(.52) saturate(.9)}
+.glimpse-video-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(7,10,18,.44),rgba(7,10,18,.68));pointer-events:none}
 
 .videoFrame{
   border-radius: 22px;
@@ -1520,6 +1535,7 @@ body.light .stackPill{border:1px solid rgba(0,0,0,10%);background: rgba(0,0,0,04
   box-shadow: 0 20px 60px rgba(0,0,0,0.55);
   background: rgba(0,0,0,0.4);
 }
+.sectionDemoVideo{margin:0 0 28px}
 
 .glimpseVideo{
   width: 100%;
@@ -1574,9 +1590,9 @@ body.light .stackPill{border:1px solid rgba(0,0,0,10%);background: rgba(0,0,0,04
   z-index: 1;
   background: linear-gradient(
     to bottom,
-    rgba(7, 10, 18, 0.78) 0%,
-    rgba(7, 10, 18, 0.88) 40%,
-    rgba(7, 10, 18, 0.94) 100%
+    rgba(7, 10, 18, 0.48) 0%,
+    rgba(7, 10, 18, 0.58) 40%,
+    rgba(7, 10, 18, 0.70) 100%
   );
   pointer-events: none;
 }
@@ -1621,7 +1637,7 @@ body.light .stackPill{border:1px solid rgba(0,0,0,10%);background: rgba(0,0,0,04
 
 /* Cards style – glassmorphism on dark video bg */
 .contact-grid > div {
-  background: rgba(20, 25, 45, 0.65);
+  background: rgba(20, 25, 45, 0.42);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border: 1px solid rgba(140, 100, 250, 0.24);
@@ -1716,19 +1732,23 @@ body.light .stackPill{border:1px solid rgba(0,0,0,10%);background: rgba(0,0,0,04
 
 .footer-bg-video{
   position: absolute;
+  inset:0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  z-index:0;
   filter: brightness(0.55) contrast(1.1);
 }
 
 .footer-video-overlay{
   position: absolute;
   inset: 0;
+  z-index:1;
+  pointer-events:none;
   background: linear-gradient(
     to bottom,
-    rgba(120, 136, 179, 0.75),
-    rgba(131, 140, 165, 0.92)
+    rgba(120, 136, 179, 0.38),
+    rgba(131, 140, 165, 0.58)
   );
 }
 .contactSection, .footer {
@@ -2150,7 +2170,8 @@ body.light .highlightItem span{
 .heroBannerRight{
   position: relative;
   overflow: hidden;
-  min-height: 620px;
+  min-height: 260px;
+  height: 260px;
   border-radius: 34px;
 
   background:
@@ -2185,7 +2206,7 @@ body.light .highlightItem span{
 
 .heroBannerRight .heroBannerImg{
   width: 100%;
-  height: 620px;
+  height: 260px;
   object-fit: cover;
   transform: scale(1.04);
 }
@@ -2295,11 +2316,12 @@ body.light .highlightItem span{
 @media(max-width:768px){
 
   .heroBannerRight{
-    min-height: 780px;
+    min-height: 220px;
+    height: 220px;
   }
 
   .heroBannerRight .heroBannerImg{
-    height: 780px;
+    height: 220px;
   }
 
   .heroRightContent{
@@ -4080,6 +4102,81 @@ body.light .langItem {
 
 body.light .langItem:hover {
   background: rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Keep section videos visible while preserving readable foreground content. */
+.hero-bg-video,
+.about-bg-video,
+.skills-bg-video,
+.edu-bg-video,
+.section-video-bg .section-bg-video,
+.glimpse-bg-video,
+.contact-bg-video,
+.footer-bg-video {
+  filter: brightness(1.02) contrast(1.04) saturate(1.08) !important;
+}
+.hero-bg-video{display:block;transform:none !important;pointer-events:none}
+.hero-video-overlay{background:linear-gradient(180deg,rgba(7,10,18,.18),rgba(7,10,18,.34)) !important}
+.about-video-overlay,.skills-video-overlay,.edu-video-overlay,
+.section-video-bg .section-bg-overlay,
+.glimpse-video-overlay{background:linear-gradient(180deg,rgba(7,10,18,.20),rgba(7,10,18,.36)) !important}
+.contact-video-overlay{background:linear-gradient(180deg,rgba(7,10,18,.24),rgba(7,10,18,.38)) !important}
+.footer-video-overlay{background:linear-gradient(180deg,rgba(7,10,18,.20),rgba(7,10,18,.36)) !important}
+body.light .hero-video-overlay,
+body.light .about-video-overlay,body.light .skills-video-overlay,
+body.light .edu-video-overlay,body.light .section-video-bg .section-bg-overlay,
+body.light .glimpse-video-overlay,body.light .contact-video-overlay,
+body.light .footer-video-overlay{background:rgba(246,248,255,.36) !important}
+body.light .hero-bg-video,body.light .about-bg-video,body.light .skills-bg-video,
+body.light .edu-bg-video,body.light .section-video-bg .section-bg-video,
+body.light .glimpse-bg-video,body.light .contact-bg-video,body.light .footer-bg-video{opacity:.82 !important}
+
+/* Hero highlights stay translucent so the brighter hero video shows through. */
+#home .heroBanner,
+#home .floatCard,
+#home .heroCard{
+  background:rgba(11,15,25,.48) !important;
+  border-color:rgba(255,255,255,.28) !important;
+  backdrop-filter:blur(10px) saturate(1.2) !important;
+}
+#home .heroBannerIn{position:relative;z-index:2;text-shadow:0 2px 12px rgba(0,0,0,.9)}
+#home .hbTitle,#home .hbSub,#home .floatTitle,#home .floatValue{color:#fff !important}
+body.light #home .heroBanner,
+body.light #home .floatCard,
+body.light #home .heroCard{background:rgba(255,255,255,.72) !important}
+body.light #home .heroBanner,body.light #home .floatCard{background:rgba(255,255,255,.64) !important}
+body.light #home .heroBannerIn{background:transparent !important}
+body.light #home .hbTitle,body.light #home .hbSub,
+body.light #home .floatTitle,body.light #home .floatValue{color:#111827 !important;text-shadow:0 1px 8px rgba(255,255,255,.9)}
+
+@media (max-width:768px){
+  #home .heroBannerRight{height:220px !important;min-height:220px !important}
+  #home .heroBannerRight .heroBannerImg{height:220px !important}
+}
+
+.avatar{position:relative;display:grid;place-items:center;background:linear-gradient(135deg,#dbeafe,#c4b5fd,#fbcfe8)}
+#profileImg[hidden]{display:none !important}
+.avatarFallback{display:none;font-weight:900;font-size:48px;color:#1e293b}
+.avatar.imageMissing .avatarFallback{display:block}
+body.light .avatarFallback{color:#1e293b}
+
+body.light .hero-bg-video,body.light .about-bg-video,body.light .skills-bg-video,
+body.light .edu-bg-video,body.light .section-video-bg .section-bg-video,
+body.light .glimpse-bg-video,body.light .contact-bg-video,body.light .footer-bg-video{
+  opacity:.72 !important;
+  filter:brightness(.88) contrast(1.12) saturate(.92) !important;
+}
+body.light .hero-video-overlay,body.light .about-video-overlay,
+body.light .skills-video-overlay,body.light .edu-video-overlay,
+body.light .section-video-bg .section-bg-overlay,body.light .glimpse-video-overlay,
+body.light .contact-video-overlay,body.light .footer-video-overlay{
+  background:rgba(246,248,255,.22) !important;
+}
+body.light .section-video-bg .card,body.light .section-video-bg .glass,
+body.light .about-video-section .card,body.light .skills-video-section .card,
+body.light .edu-video-section .card,body.light .contact-section .card{
+  background:rgba(255,255,255,.76) !important;
+  border-color:rgba(15,23,42,.16) !important;
 }
 
 /* Icon buttons light mode */
