@@ -4223,3 +4223,106 @@ body.light [style*="color:#fff"],
 body.light [style*="color: #fff"] {
   color: #1a1a2e !important;
 }
+
+/* Compact the top sections so the key copy and skill stacks fit more comfortably. */
+#home.section{padding-top:76px;padding-bottom:72px}
+#home.hero{padding-top:64px}
+#home .heroLeft .title{font-size:clamp(30px,3.65vw,49px);line-height:1.04}
+#home .heroLeft .subtitle{max-width:none;font-size:14.5px;line-height:1.48}
+#home .heroCard{min-height:480px}
+#skills.section{padding-top:72px;padding-bottom:72px}
+#skills.skills-video-section{min-height:0}
+#skills .grid3,#skills .mt16{gap:12px}
+#skills .cardXL{padding:clamp(14px,1.6vw,20px)}
+#skills .logoGrid{gap:8px;margin-top:8px}
+#skills .logoItem{padding:9px 10px}
+#skills .logoItem i{font-size:21px}
+#projects.section,#certifications.section{padding-top:78px;padding-bottom:78px}
+
+/* Keep project and research cards clearly separated from their video backdrops. */
+#projects .projGridCard,#projects .projectCard{
+  background:rgba(7,12,25,.88) !important;
+  border-color:rgba(255,255,255,.28) !important;
+  backdrop-filter:blur(14px);
+}
+#projects .projectSlider{background:rgba(7,12,25,.72);border-color:rgba(255,255,255,.28)}
+#certifications .certCard,#certifications .certSlide{
+  background:rgba(8,13,27,.92) !important;
+  border-color:rgba(255,255,255,.30) !important;
+  backdrop-filter:blur(14px);
+}
+#certifications .certMeta{background:rgba(8,13,27,.96)}
+#certifications .certTitle{color:#fff}
+#certifications .certSub{color:#d5dced}
+#achievements .awardCard{background:rgba(8,13,27,.88);border-color:rgba(255,255,255,.28)}
+
+/* Slow and soften the decorative Blogs and LinkedIn footage. */
+#blogs .section-bg-video,#linkedin .section-bg-video{
+  filter:brightness(.42) contrast(.96) saturate(.78) !important;
+  opacity:.58 !important;
+}
+#blogs .section-bg-overlay,#linkedin .section-bg-overlay{
+  background:rgba(7,10,18,.50) !important;
+}
+/* Recognition cards should read clearly over the achievement video. */
+#achievements .awardCard{
+  background:rgba(7,12,25,.96) !important;
+  border-color:rgba(255,255,255,.34) !important;
+}
+body.light #achievements .awardCard{
+  background:rgba(255,255,255,.98) !important;
+  border-color:rgba(15,23,42,.24) !important;
+}
+/* Restore clarity and color in the LinkedIn background footage. */
+#linkedin .section-bg-video{
+  filter:brightness(.72) contrast(1.28) saturate(1.12) !important;
+  opacity:.82 !important;
+}
+#linkedin .section-bg-overlay{background:rgba(7,10,18,.32) !important}
+
+/* Restore the video player frame inside Video Glimpse above its section background. */
+.glimpse-content-frame{position:relative;z-index:3;margin-top:20px;padding:12px}
+.glimpse-content-frame .glimpseVideo{height:clamp(260px,42vw,460px);border-radius:14px}
+
+/* Make publication, patent, chapter, and edited-book cards readable over footage. */
+#publications .itemCard,#patents .itemCard,#bookchapter .itemCard,#editedbook .itemCard,#linkedin .itemCard{
+  background:rgba(8,13,27,.90) !important;
+  border-color:rgba(255,255,255,.30) !important;
+  backdrop-filter:blur(14px);
+}
+#publications .itemTitle,#patents .itemTitle,#bookchapter .itemTitle,#editedbook .itemTitle,#linkedin .itemTitle{color:#fff}
+#publications .itemSub,#publications .itemMeta,#publications .itemDesc,
+#patents .itemSub,#patents .itemMeta,#patents .itemDesc,
+#bookchapter .itemSub,#bookchapter .itemMeta,#bookchapter .itemDesc,
+#editedbook .itemSub,#editedbook .itemMeta,#editedbook .itemDesc,
+#linkedin .itemSub,#linkedin .itemMeta,#linkedin .itemDesc{color:#d5dced}
+#editedbook .itemMedia2 .miniImg:first-child{height:230px}
+#editedbook .itemMedia2 .miniImg:first-child img{object-fit:contain;background:#0b1d38}
+
+/* Keep the clear card treatment in light mode too. */
+body.light #projects .projGridCard,body.light #projects .projectCard,
+body.light #certifications .certCard,body.light #certifications .certSlide,
+body.light #publications .itemCard,body.light #patents .itemCard,
+body.light #bookchapter .itemCard,body.light #editedbook .itemCard,
+body.light #linkedin .itemCard,body.light #achievements .awardCard{
+  background:rgba(255,255,255,.94) !important;
+  border-color:rgba(15,23,42,.20) !important;
+}
+body.light #certifications .certMeta{background:rgba(255,255,255,.98)}
+body.light #certifications .certTitle,
+body.light #publications .itemTitle,body.light #patents .itemTitle,
+body.light #bookchapter .itemTitle,body.light #editedbook .itemTitle,
+body.light #linkedin .itemTitle{color:#111827 !important}
+body.light #certifications .certSub,
+body.light #publications .itemSub,body.light #publications .itemMeta,body.light #publications .itemDesc,
+body.light #patents .itemSub,body.light #patents .itemMeta,body.light #patents .itemDesc,
+body.light #bookchapter .itemSub,body.light #bookchapter .itemMeta,body.light #bookchapter .itemDesc,
+body.light #editedbook .itemSub,body.light #editedbook .itemMeta,body.light #editedbook .itemDesc,
+body.light #linkedin .itemSub,body.light #linkedin .itemMeta,body.light #linkedin .itemDesc{color:#475569 !important}
+
+@media(max-width:768px){
+  #home.section{padding-top:58px;padding-bottom:56px}
+  #home .heroLeft .title{font-size:clamp(28px,7vw,38px)}
+  #home .heroLeft .subtitle{font-size:14px}
+  #skills.section,#projects.section,#certifications.section{padding-top:58px;padding-bottom:58px}
+}
