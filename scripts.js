@@ -23,7 +23,7 @@ const PROFILE = {
   heroBannerImg2: "assets/hero-banner-2.jpg", // Right-side hero highlight image
 
   // Contact extras
-  mapEmbedUrl: "ADD_GOOGLE_MAP_EMBED_URL_HERE",  // CONTACT MAP: paste iframe src URL (NOT the whole iframe)
+  mapEmbedUrl: "https://maps.app.goo.gl/JDbax8W8aj25mbJ48",  // CONTACT MAP: paste iframe src URL (NOT the whole iframe)
   contactQrImg: "assets/qr/contact-qr.png",      // CONTACT SECTION QR image
   footerQrImg: "assets/qr/footer-qr.png",        // FOOTER QR image
 };
