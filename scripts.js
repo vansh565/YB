@@ -24,8 +24,8 @@ const PROFILE = {
 
   // Contact extras
   mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3600.082016569487!2d84.8512966!3d25.5356448!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ed577f6954a4ab%3A0x6ce8f1b9fc2aa02a!2sIndian%20Institute%20of%20Technology%2C%20Patna!5e0!3m2!1sen!2sin!4v1791665304221!5m2!1sen!2sin",  // CONTACT MAP: paste iframe src URL (NOT the whole iframe)
-  contactQrImg: "assets/qr/contact-qr.png",      // CONTACT SECTION QR image
-  footerQrImg: "assets/qr/footer-qr.png",        // FOOTER QR image
+  contactQrImg: "https://raw.githubusercontent.com/bh-yogendra1/Yogendra-Bh_pm/main/linktree%20qr.png",      // CONTACT SECTION QR image
+  footerQrImg: "https://raw.githubusercontent.com/bh-yogendra1/Yogendra-Bh_pm/main/footer%20qr.png",        // FOOTER QR image
 };
 
 // Hero text
