@@ -380,6 +380,8 @@ body.light .bullets{color:rgba(11,16,34,.78)}
 }
 .logoItem:hover{transform: translateY(-2px);background:rgba(255,255,255,.10)}
 .logoItem i{font-size:24px}
+.logoItem svg{width:24px;height:24px;min-width:24px;flex-shrink:0;display:inline-block}
+.logoItem span{font-size:13px;line-height:1.25}
 .softNote{margin-top:10px;font-size:12px;color:var(--muted)}
 
 /* Timeline */
@@ -4237,6 +4239,8 @@ body.light [style*="color: #fff"] {
 #skills .logoGrid{gap:8px;margin-top:8px}
 #skills .logoItem{padding:9px 10px}
 #skills .logoItem i{font-size:21px}
+#skills .logoItem svg{width:21px;height:21px;min-width:21px;flex-shrink:0}
+#skills .logoItem span{font-size:12px;font-weight:500;line-height:1.2}
 #projects.section,#certifications.section{padding-top:78px;padding-bottom:78px}
 
 /* Keep project and research cards clearly separated from their video backdrops. */
@@ -4298,6 +4302,39 @@ body.light #achievements .awardCard{
 #linkedin .itemSub,#linkedin .itemMeta,#linkedin .itemDesc{color:#d5dced}
 #editedbook .itemMedia2 .miniImg:first-child{height:230px}
 #editedbook .itemMedia2 .miniImg:first-child img{object-fit:contain;background:#0b1d38}
+#publications .itemCard,#patents .itemCard{display:flex;flex-direction:column}
+#publications .itemDesc,#patents .itemDesc{flex-grow:1}
+#publications .itemSub,#patents .itemSub{color:#38bdf8 !important;font-weight:600}
+.highlight-author{
+  color:#38bdf8 !important;
+  font-weight:800;
+  background:rgba(56,189,248,.16);
+  padding:2px 7px;
+  border-radius:6px;
+  border:1px solid rgba(56,189,248,.35);
+  display:inline-block;
+  letter-spacing:.2px;
+}
+.highlight-inventor{
+  color:#facc15 !important;
+  font-weight:800;
+  background:rgba(250,204,21,.16);
+  padding:2px 8px;
+  border-radius:6px;
+  border:1px solid rgba(250,204,21,.40);
+  display:inline-block;
+  letter-spacing:.3px;
+}
+body.light .highlight-author{
+  color:#0284c7 !important;
+  background:rgba(2,132,199,.12);
+  border-color:rgba(2,132,199,.3);
+}
+body.light .highlight-inventor{
+  color:#b45309 !important;
+  background:rgba(245,158,11,.14);
+  border-color:rgba(245,158,11,.35);
+}
 
 /* Keep the clear card treatment in light mode too. */
 body.light #projects .projGridCard,body.light #projects .projectCard,

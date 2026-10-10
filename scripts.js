@@ -56,72 +56,67 @@ const STATS = [
   { label: "Impact Score", value: 1000, suffix: "+" }
 ];
 
-// Skills (devicon)
+// Skills (devicon + custom SVG)
 const SKILLS = {
   languages: [
-    { icon: "devicon-python-plain colored", name: "Python" },
     { icon: "devicon-cplusplus-plain colored", name: "C/C++" },
     { icon: "devicon-javascript-plain colored", name: "JavaScript" },
     { icon: "devicon-mysql-plain colored", name: "SQL" },
+    { icon: "devicon-python-plain colored", name: "Python" }
   ],
-  stack: [
-    { icon: "devicon-react-original colored", name: "React" },
-    { icon: "devicon-nodejs-plain colored", name: "Node.js" },
-    { icon: "devicon-express-original colored", name: "Express" },
+  aiPlatforms: [
+    { svg: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2a4 4 0 0 0-4 4c0 .35.05.69.13 1.02A6 6 0 0 0 4 12.8a5.5 5.5 0 0 0 3.5 5.14A3.5 3.5 0 0 0 11 21.5h2a3.5 3.5 0 0 0 3.5-3.56A5.5 5.5 0 0 0 20 12.8a6 6 0 0 0-4.13-5.78c.08-.33.13-.67.13-1.02a4 4 0 0 0-4-4Z" stroke="#38bdf8" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 6v6m0 0l-3.5 3.5m3.5-3.5l3.5 3.5m-3.5-3.5H7m5 0h5" stroke="#818cf8" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="12" r="1.5" fill="#38bdf8"/><circle cx="8.5" cy="15.5" r="1.2" fill="#818cf8"/><circle cx="15.5" cy="15.5" r="1.2" fill="#818cf8"/></svg>`, name: "Machine Learning" },
+    { svg: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l2.4 5.6L20 10l-5.6 2.4L12 18l-2.4-5.6L4 10l5.6-2.4L12 2Z" fill="#a855f7"/><path d="M19 14l1.2 2.8L23 18l-2.8 1.2L19 22l-1.2-2.8L15 18l2.8-1.2L19 14Z" fill="#38bdf8"/><path d="M5 15l.8 1.9L7.7 17.7l-1.9.8L5 20.4l-.8-1.9L2.3 17.7l1.9-.8L5 15Z" fill="#f472b6"/></svg>`, name: "Generative Artificial Intelligence" },
+    { icon: "devicon-jupyter-plain colored", name: "Jupyter Notebook" },
+    { svg: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.5 7.5a4.5 4.5 0 0 0 0 9c2.3 0 3.8-1.7 5.5-4.5 1.7-2.8 3.2-4.5 5.5-4.5a4.5 4.5 0 1 1 0 9c-2.3 0-3.8-1.7-5.5-4.5-1.7 2.8-3.2 4.5-5.5 4.5" stroke="#F9AB00" stroke-width="2.6" stroke-linecap="round"/></svg>`, name: "Google Colab" },
+    { svg: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="5" cy="6" r="2.2" fill="#6366f1"/><circle cx="5" cy="12" r="2.2" fill="#6366f1"/><circle cx="5" cy="18" r="2.2" fill="#6366f1"/><circle cx="12" cy="4" r="2.2" fill="#a855f7"/><circle cx="12" cy="10" r="2.2" fill="#a855f7"/><circle cx="12" cy="16" r="2.2" fill="#a855f7"/><circle cx="12" cy="21" r="2.2" fill="#a855f7"/><circle cx="19" cy="8" r="2.2" fill="#06b6d4"/><circle cx="19" cy="16" r="2.2" fill="#06b6d4"/><path d="M7 6l3-1.5M7 6l3 3.5M7 12l3-7.5M7 12l3-1.5M7 12l3 3.5M7 18l3-1.5M7 18l3 2.5M14 4l3 3.5M14 10l3-1.5M14 10l3 5.5M14 16l3-7.5M14 16l3 .5M14 21l3-4.5" stroke="rgba(255,255,255,0.3)" stroke-width="1.1"/></svg>`, name: "Deep Learning" },
+    { svg: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 4a2 2 0 0 1 2-2h7l5 5v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4Z" stroke="#38bdf8" stroke-width="1.8"/><path d="M13 2v5h5" stroke="#38bdf8" stroke-width="1.8"/><circle cx="14" cy="15" r="3.5" stroke="#a855f7" stroke-width="1.8"/><path d="M16.5 17.5L20 21" stroke="#a855f7" stroke-width="2" stroke-linecap="round"/><path d="M7 10h4M7 14h3" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round"/></svg>`, name: "RAG" },
+    { svg: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" fill="#FFD21E"/><ellipse cx="8.5" cy="10.5" rx="1.8" ry="2.2" fill="#1F2937"/><ellipse cx="15.5" cy="10.5" rx="1.8" ry="2.2" fill="#1F2937"/><circle cx="8" cy="9.8" r="0.7" fill="#FFFFFF"/><circle cx="15" cy="9.8" r="0.7" fill="#FFFFFF"/><path d="M8.5 14.2c.9 1.6 2.1 2.3 3.5 2.3s2.6-.7 3.5-2.3" stroke="#1F2937" stroke-width="1.8" stroke-linecap="round"/><path d="M3 13.5c1.2-1.5 3.2-1.2 3.8.5.5 1.5-.5 3-2 3.2-1.2.2-2.3-.7-2.6-1.7-.2-.7-.2-1.3.8-2Z" fill="#FFA500"/><path d="M21 13.5c-1.2-1.5-3.2-1.2-3.8.5-.5 1.5.5 3 2 3.2 1.2.2 2.3-.7 2.6-1.7.2-.7.2-1.3-.8-2Z" fill="#FFA500"/></svg>`, name: "Hugging Face" },
+    { svg: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 7a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2a4 4 0 0 1-4 4h-2" stroke="#22c55e" stroke-width="2.2" stroke-linecap="round"/><path d="M16 17a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4v-2a4 4 0 0 1 4-4h2" stroke="#0ea5e9" stroke-width="2.2" stroke-linecap="round"/><circle cx="14" cy="7" r="1.5" fill="#22c55e"/></svg>`, name: "LangChain" },
+    { svg: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="5" cy="12" r="3" fill="#22c55e"/><circle cx="19" cy="6" r="3" fill="#0ea5e9"/><circle cx="19" cy="18" r="3" fill="#a855f7"/><path d="M8 11l8-4M8 13l8 4" stroke="#94a3b8" stroke-width="1.8" stroke-linecap="round"/><path d="M19 9v6" stroke="#94a3b8" stroke-width="1.8" stroke-linecap="round"/></svg>`, name: "LangGraph" },
+    { svg: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="4" width="7" height="6" rx="1.5" fill="#f43f5e"/><rect x="14" y="4" width="7" height="6" rx="1.5" fill="#8b5cf6"/><rect x="8.5" y="14" width="7" height="6" rx="1.5" fill="#06b6d4"/><path d="M6.5 10v2a2 2 0 0 0 2 2h3.5m5.5-4v2a2 2 0 0 1-2 2H12" stroke="#cbd5e1" stroke-width="1.6"/></svg>`, name: "Transformers" },
+    { svg: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="5" width="20" height="14" rx="3" stroke="#38bdf8" stroke-width="1.8"/><path d="M6 14.5v-4l2.5 4v-4M12 10.5v4M10.8 10.5h2.4M15.5 10.5v4m0-2h2a1 1 0 0 0 0-2h-2" stroke="#38bdf8" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>`, name: "API" },
+    { svg: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="4.5" fill="#6366f1"/><ellipse cx="12" cy="12" rx="9" ry="3.8" stroke="#38bdf8" stroke-width="1.4" transform="rotate(-25 12 12)"/><ellipse cx="12" cy="12" rx="9" ry="3.8" stroke="#a855f7" stroke-width="1.4" transform="rotate(40 12 12)"/><circle cx="5" cy="8" r="1.5" fill="#38bdf8"/><circle cx="18" cy="17" r="1.5" fill="#a855f7"/></svg>`, name: "Agentic AI" }
+  ],
+  database: [
+    { icon: "devicon-mysql-plain colored", name: "SQL" },
     { icon: "devicon-mongodb-plain colored", name: "MongoDB" },
+    { svg: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l8 4.5v9L12 20l-8-4.5v-9L12 2Z" stroke="#10b981" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 2v9m8-4.5l-8 4.5m-8-4.5l8 4.5" stroke="#10b981" stroke-width="1.6"/><circle cx="12" cy="11" r="2" fill="#34d399"/><circle cx="6" cy="14" r="1.4" fill="#a7f3d0"/><circle cx="18" cy="14" r="1.4" fill="#a7f3d0"/><circle cx="12" cy="6" r="1.4" fill="#a7f3d0"/></svg>`, name: "Vector Database" }
+  ],
+  libraries: [
+    { icon: "devicon-pytorch-original colored", name: "PyTorch" },
+    { svg: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 4l3.5 6.5h6.5L16.5 15l2.5 6.5-6.5-3.8-6.5 3.8 2.5-6.5L3 10.5h6.5L12 4Z" fill="#FF4B4B"/></svg>`, name: "Streamlit" },
+    { icon: "devicon-pandas-original colored", name: "Pandas" },
+    { svg: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 21h18M5 17l4-6 4 3 6-9" stroke="#119DFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="11" r="1.8" fill="#FF4B4B"/><circle cx="13" cy="14" r="1.8" fill="#F9AB00"/><circle cx="19" cy="5" r="1.8" fill="#22C55E"/></svg>`, name: "Matplotlib" },
+    { svg: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 17c3-5 5-8 8-4s5 5 8-4" stroke="#4c72b0" stroke-width="2.4" stroke-linecap="round"/><path d="M3 20c3-5 5-7 8-3s5 4 8-2" stroke="#55a868" stroke-width="2.4" stroke-linecap="round"/><circle cx="11" cy="13" r="1.5" fill="#c44e52"/><circle cx="19" cy="9" r="1.5" fill="#8172b2"/></svg>`, name: "Seaborn" },
+    { svg: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="13" width="3.2" height="8" rx="1" fill="#239120"/><rect x="8.2" y="7" width="3.2" height="14" rx="1" fill="#3F4F75"/><rect x="13.4" y="3" width="3.2" height="18" rx="1" fill="#119DFF"/><rect x="18.6" y="10" width="3.2" height="11" rx="1" fill="#DB4437"/></svg>`, name: "Plotly" },
+    { icon: "devicon-numpy-plain colored", name: "NumPy" },
+    { svg: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="5" y="5" width="14" height="14" rx="2" stroke="#38bdf8" stroke-width="1.8"/><rect x="8" y="8" width="8" height="8" rx="1" fill="#0284c7"/><path d="M9 2v3m6-3v3M9 19v3m6-3v3M2 9h3m-3 6h3M19 9h3m-3 6h3" stroke="#38bdf8" stroke-width="1.8" stroke-linecap="round"/></svg>`, name: "OS" },
+    { icon: "devicon-scikitlearn-plain colored", name: "Scikit-learn" },
+    { svg: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" fill="#F2C811"/><text x="12" y="15.5" font-size="7.5" font-weight="900" text-anchor="middle" fill="#111827" font-family="system-ui, sans-serif">DAX</text></svg>`, name: "DAX" }
   ],
   tools: [
     { icon: "devicon-git-plain colored", name: "Git" },
     { icon: "devicon-github-original colored", name: "GitHub" },
     { icon: "devicon-docker-plain colored", name: "Docker" },
-    { icon: "devicon-linux-plain colored", name: "Linux" },
-  ]
-  ,
-  // NEW (extra 3 cards) — add minimum 12 items each for better visibility
-  ai: [
-    { icon: "devicon-tensorflow-original colored", name: "TensorFlow" },
-    { icon: "devicon-pytorch-original colored", name: "PyTorch" },
-    { icon: "devicon-opencv-plain colored", name: "OpenCV" },
-    { icon: "devicon-numpy-plain colored", name: "NumPy" },
-    { icon: "devicon-pandas-original colored", name: "Pandas" },
-    { icon: "devicon-scikitlearn-plain colored", name: "Scikit-learn" },
-    { icon: "devicon-jupyter-plain colored", name: "Jupyter" },
-    { icon: "devicon-anaconda-original colored", name: "Anaconda" },
-    { icon: "devicon-googlecloud-plain colored", name: "GCP (AI)" },
-    { icon: "devicon-amazonwebservices-original colored", name: "AWS (AI)" },
-    { icon: "devicon-azure-plain colored", name: "Azure (AI)" },
-    { icon: "devicon-kaggle-original colored", name: "Kaggle" }
+    { svg: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="12" width="3.6" height="9" rx="1" fill="#F2C811"/><rect x="10.2" y="7" width="3.6" height="14" rx="1" fill="#F2C811"/><rect x="16.4" y="3" width="3.6" height="18" rx="1" fill="#E6AD10"/></svg>`, name: "PowerBI" }
   ],
-  cloud: [
-    { icon: "devicon-docker-plain colored", name: "Docker" },
-    { icon: "devicon-kubernetes-plain colored", name: "Kubernetes" },
-    { icon: "devicon-jenkins-line colored", name: "Jenkins" },
-    { icon: "devicon-gitlab-plain colored", name: "GitLab CI" },
-    { icon: "devicon-amazonwebservices-original colored", name: "AWS" },
-    { icon: "devicon-googlecloud-plain colored", name: "GCP" },
-    { icon: "devicon-azure-plain colored", name: "Azure" },
-    { icon: "devicon-nginx-original colored", name: "NGINX" },
+  platforms: [
     { icon: "devicon-linux-plain colored", name: "Linux" },
-    { icon: "devicon-bash-plain colored", name: "Bash" },
-    { icon: "devicon-grafana-original colored", name: "Grafana" },
-    { icon: "devicon-prometheus-original colored", name: "Prometheus" }
-  ],
-  research: [
-    { icon: "devicon-python-plain colored", name: "Python (Tools)" },
-    { icon: "devicon-latex-original colored", name: "LaTeX" },
-    { icon: "devicon-markdown-original colored", name: "Markdown" },
-    { icon: "devicon-git-plain colored", name: "Versioning" },
-    { icon: "devicon-github-original colored", name: "GitHub" },
-    { icon: "devicon-notion-plain colored", name: "Notion" },
-    { icon: "devicon-slack-plain colored", name: "Slack" },
-    { icon: "devicon-google-plain colored", name: "Google Scholar" },
-    { icon: "devicon-figma-plain colored", name: "Figma" },
-    { icon: "devicon-vscode-original colored", name: "VS Code" },
-    { icon: "devicon-ubuntu-plain colored", name: "Ubuntu" },
-    { icon: "devicon-matlab-plain colored", name: "MATLAB" }
+    { svg: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="9" stroke="#38bdf8" stroke-width="1.8"/><path d="M3 12h18M12 3c2.5 3 3.8 6 3.8 9s-1.3 6-3.8 9c-2.5-3-3.8-6-3.8-9s1.3-6 3.8-9Z" stroke="#38bdf8" stroke-width="1.8"/></svg>`, name: "Web" },
+    { icon: "devicon-apple-original colored", name: "Mac" },
+    { svg: `<svg viewBox="0 0 24 24" fill="#0078D4" xmlns="http://www.w3.org/2000/svg"><path d="M3 3h8v8H3V3Zm10 0h8v8h-8V3ZM3 13h8v8H3v-8Zm10 0h8v8h-8v-8Z"/></svg>`, name: "Windows" },
+    { icon: "devicon-arduino-plain colored", name: "Arduino" },
+    { icon: "devicon-raspberrypi-line colored", name: "Raspberry Pi" },
+    { svg: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="4" width="16" height="16" rx="2" fill="#E7352C"/><path d="M7 8h10M7 12h8M7 16h6" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round"/><rect x="15" y="13" width="3" height="3" fill="#ffffff" rx="0.5"/></svg>`, name: "ESP-32" }
   ]
-
 };
+
+// Aliases for backward compatibility
+SKILLS.stack = SKILLS.database;
+SKILLS.ai = SKILLS.aiPlatforms;
+SKILLS.cloud = SKILLS.libraries;
+SKILLS.research = SKILLS.platforms;
 
 // Experience cards (bigger + 2 images + pdf)
 const EXPERIENCES = [
@@ -339,27 +334,95 @@ const VIDEO = {
 // Publications / Patents / Books: (2 buttons + optional 2 images)
 const PUBLICATIONS = [
   {
-    title: "Gas & Fire Detection Systems for Home/Industry",
-    subtitle: "CRC Press • 2023",
-    meta: "Publication",
-    desc: "This work focuses on design and implementation of detection mechanisms for safety monitoring, including alerts, architecture, and deployment notes.",
-    img1: "assets/pubs/pub1-1.jpg",
-    img2: "assets/pubs/pub1-2.jpg",
-    btn1: { label: "View Paper", url: "ADD_PUBLICATION_LINK" },
-    btn2: { label: "Publisher", url: "ADD_PUBLISHER_LINK" }
+    title: "Implementation of Gas and Fire Detection Systems in Home and Industrial Environment",
+    subtitle: "Recent Advances in Computing Sciences (pp. 231–235) • CRC Press (2023)",
+    meta: "Authors: Bharadwaj, Y., Singh, P. and Rajpoot, N.K.",
+    desc: "Focuses on the engineering and deployment of IoT-based sensor architectures for real-time hazardous gas and fire breakout monitoring in residential and industrial settings, featuring automated threshold alerts and safety mitigation.",
+    btn1: { label: "View Paper", url: "https://books.google.co.in/books?hl=en&lr=&id=FyfdEAAAQBAJ&oi=fnd&pg=PA231&dq=Implementation+of+Gas+and+Fire+Detection+Systems+in+Home+and+Industrial+Environment&ots=tN6YMwGWlX&sig=sQtWm-0VxMfdLt1v3oECJ7_BXHg&redir_esc=y#v=onepage&q=Implementation%20of%20Gas%20and%20Fire%20Detection%20Systems%20in%20Home%20and%20Industrial%20Environment&f=false" },
+    btn2: { label: "CRC Press", url: "https://www.routledge.com/" }
+  },
+  {
+    title: "Namaste-Enabled Robot-Assisted Hospitality Services: Design and Performance Evaluation of an Arduino-Based Service Robot in the Hospitality Industry",
+    subtitle: "2023 International Conference on Computer Science and Emerging Technologies (CSET) (pp. 1–5) • IEEE (Oct 2023)",
+    meta: "Authors: Bharadwaj, Y., Singh, P., Bharadwaj, R. and Rajpoot, N.K.",
+    desc: "Presents the design, mechanical integration, and performance benchmarking of an Arduino-powered interactive service robot engineered with traditional Indian 'Namaste' greeting gestures and autonomous navigation for modern hospitality services.",
+    btn1: { label: "View Paper", url: "https://ieeexplore.ieee.org/abstract/document/10346915" },
+    btn2: { label: "IEEE CSET", url: "https://ieeexplore.ieee.org/xpl/conhome/10346765/proceeding" }
+  },
+  {
+    title: "Design and Development of a Virtual Doctor Robot for Remote Patient Care",
+    subtitle: "AIP Conference Proceedings (Vol. 3121, No. 1) • AIP Publishing (July 2024)",
+    meta: "Authors: Bharadwaj, Y., Singh, P.D., Bharadwaj, R. and Chauhan, A.",
+    desc: "Covers the complete system design and hardware-software pipeline of a virtual doctor telepresence robot designed for contactless patient monitoring, remote vitals tracking, and tele-consultation in clinical environments.",
+    btn1: { label: "View Paper", url: "https://pubs.aip.org/aip/acp/article-abstract/3121/1/020006/3303019/Design-and-development-of-a-virtual-doctor-robot" },
+    btn2: { label: "AIP Publishing", url: "https://pubs.aip.org/aip/acp" }
+  },
+  {
+    title: "Machine Learning Harmonies: Cough Signal Classification for Early Disease Detection",
+    subtitle: "AIP Conference Proceedings (Vol. 3121, No. 1) • AIP Publishing (July 2024)",
+    meta: "Authors: Bharadwaj, Y., Singh, P.D., Bharadwaj, R. and Chauhan, A.",
+    desc: "Explores acoustic signal processing techniques, MFCC feature engineering, and supervised machine learning classifiers applied to cough audio streams for non-invasive, prompt detection of pulmonary and respiratory conditions.",
+    btn1: { label: "View Paper", url: "https://pubs.aip.org/aip/acp/article-abstract/3121/1/040015/3303054/Machine-learning-harmonies-Cough-signal" },
+    btn2: { label: "AIP Publishing", url: "https://pubs.aip.org/aip/acp" }
+  },
+  {
+    title: "Automated Cough Classification for COVID-19 Detection Using Machine Learning",
+    subtitle: "Recent Advances in Computing Sciences (pp. 288–292) • CRC Press",
+    meta: "Authors: Bharadwaj, Y., Singh, P.D. and Bharadwaj, R.",
+    desc: "Develops an intelligent diagnostic framework utilizing machine learning models to classify respiratory cough patterns specifically for COVID-19 screening, offering high diagnostic sensitivity and rapid screening capabilities.",
+    btn1: { label: "View Paper", url: "https://www.taylorfrancis.com/chapters/edit/10.1201/9781003570349-57/automated-cough-classification-covid-19-detection-using-machine-learning-yogendra-bharadwaj-prabh-deep-singh-ramendra-bharadwaj" },
+    btn2: { label: "CRC Press", url: "https://www.routledge.com/" }
   }
 ];
 
 const PATENTS = [
   {
-    title: "202531085495 — Solar-electric marine vessel with dual turbine propulsion",
-    subtitle: "Filed/Published • 2025",
-    meta: "Patent",
-    desc: "Patent describing a marine vessel with energy efficiency and safety focus. Includes propulsion details and environmental safety aspects.",
-    img1: "assets/patents/p1-1.jpg",
-    img2: "assets/patents/p1-2.jpg",
-    btn1: { label: "View Patent", url: "ADD_PATENT_LINK" },
-    btn2: { label: "Patent Portal", url: "ADD_PATENT_PORTAL_LINK" }
+    title: "A system and method for a solar-electric marine vessel with dual turbine propulsion and integrated environmental safety system",
+    subtitle: "Patent No.: 202531085495 • Published: September 09th, 2025",
+    meta: "Role: (2nd Inventor) • Indian Patent Office (IPO)",
+    desc: "A system and method for a solar-electric marine vessel with dual turbine propulsion and an integrated environmental safety system for high-efficiency, eco-friendly marine operations.",
+    btn1: { label: "View Patent", url: "https://iprsearch.ipindia.gov.in/PublicSearch/" },
+    btn2: { label: "Patent Portal", url: "https://iprsearch.ipindia.gov.in/PublicSearch/" }
+  },
+  {
+    title: "Modular Gravity-Agnostic Plant Growth Chamber with AI-Integrated Dynamic Nutrient Delivery and Environmental Control System",
+    subtitle: "Design Patent No.: 468807-001 • Registered: August 07th, 2025",
+    meta: "Role: (1st Inventor) • Design Patent • Indian Patent Office (IPO)",
+    desc: "A modular gravity-agnostic plant growth chamber integrating artificial intelligence for dynamic nutrient delivery and closed-loop environmental control in controlled and microgravity environments.",
+    btn1: { label: "View Patent", url: "https://iprsearch.ipindia.gov.in/PublicSearch/" },
+    btn2: { label: "Patent Portal", url: "https://iprsearch.ipindia.gov.in/PublicSearch/" }
+  },
+  {
+    title: "A System And Method For Drone Navigation Multi Side Sensors",
+    subtitle: "Patent No.: 202431066275 • Published: September 02nd, 2024",
+    meta: "Role: (1st Inventor) • Indian Patent Office (IPO)",
+    desc: "An autonomous navigation system and method for unmanned aerial vehicles (UAVs) utilizing multi-side sensor arrays and real-time obstacle avoidance algorithms.",
+    btn1: { label: "View Patent", url: "https://iprsearch.ipindia.gov.in/PublicSearch/" },
+    btn2: { label: "Patent Portal", url: "https://iprsearch.ipindia.gov.in/PublicSearch/" }
+  },
+  {
+    title: "A Smart Heartbeat Alarm and Tracker with Novel Algorithm for Enhanced Health Monitoring",
+    subtitle: "Patent No.: 202411032877 • Published: April 25th, 2024",
+    meta: "Role: (1st Inventor) • Indian Patent Office (IPO)",
+    desc: "A smart heartbeat monitoring and alarm device employing a novel algorithmic pipeline for enhanced continuous physiological tracking and cardiac anomaly detection.",
+    btn1: { label: "View Patent", url: "https://iprsearch.ipindia.gov.in/PublicSearch/" },
+    btn2: { label: "Patent Portal", url: "https://iprsearch.ipindia.gov.in/PublicSearch/" }
+  },
+  {
+    title: "Namaste-Enabled Service Robot In The Hospitality Industry",
+    subtitle: "Patent No.: 202411035697 • Published: May 06th, 2024",
+    meta: "Role: (1st Inventor) • Indian Patent Office (IPO)",
+    desc: "An intelligent robotic service system engineered for the hospitality industry featuring culturally adaptive greeting gestures ('Namaste'), autonomous mobility, and contactless patron assistance.",
+    btn1: { label: "View Patent", url: "https://iprsearch.ipindia.gov.in/PublicSearch/" },
+    btn2: { label: "Patent Portal", url: "https://iprsearch.ipindia.gov.in/PublicSearch/" }
+  },
+  {
+    title: "A Saline Level Monitring Device and Method Therof",
+    subtitle: "Patent No.: 202411051991 • Published: July 08th, 2024",
+    meta: "Role: (1st Inventor) • Indian Patent Office (IPO)",
+    desc: "A medical monitoring device and method for continuous, non-invasive measurement of intravenous saline levels with automated alert notifications for hospital staff.",
+    btn1: { label: "View Patent", url: "https://iprsearch.ipindia.gov.in/PublicSearch/" },
+    btn2: { label: "Patent Portal", url: "https://iprsearch.ipindia.gov.in/PublicSearch/" }
   }
 ];
 
@@ -389,17 +452,161 @@ const EDITED_BOOKS = [
   }
 ];
 
-// Achievements (9) — bigger card + 2 images + 2 links
+// Achievements (12) — cards with multi-proof slider + direct LinkedIn links
 const ACHIEVEMENTS = [
-  { icon:"🏆", title:"Best Researcher Award", meta:"G20 Symposium • 2023", sub:"Robotics & Automation (Digital Agriculture)", desc:"Write 5–7 lines about this recognition: why you got it, what you delivered, impact, and audience. Keep it strong, measurable, and professional.", img1:"assets/ach/a1-1.jpg", img2:"assets/ach/a1-2.jpg", btn1:{label:"Proof", url:"ADD_LINK"}, btn2:{label:"Gallery", url:"ADD_LINK"} },
-  { icon:"🎖️", title:"Top Performer Recognition", meta:"Academic / Research", sub:"Consistent results & contributions", desc:"Write 5–7 lines describing your performance recognition and what outcomes you achieved.", img1:"assets/ach/a2-1.jpg", img2:"assets/ach/a2-2.jpg", btn1:{label:"Proof", url:"ADD_LINK"}, btn2:{label:"Certificate", url:"ADD_LINK"} },
-  { icon:"🥇", title:"Hackathon Winner", meta:"Tech Event", sub:"Solution impact & execution", desc:"Write 5–7 lines about hackathon: problem, your approach, role, and final result.", img1:"assets/ach/a3-1.jpg", img2:"assets/ach/a3-2.jpg", btn1:{label:"Proof", url:"ADD_LINK"}, btn2:{label:"Photos", url:"ADD_LINK"} },
-  { icon:"📜", title:"Publication Milestone", meta:"Research Output", sub:"Peer-reviewed contribution", desc:"Write 5–7 lines: what you published, novelty, and why it matters.", img1:"assets/ach/a4-1.jpg", img2:"assets/ach/a4-2.jpg", btn1:{label:"View", url:"ADD_LINK"}, btn2:{label:"Index", url:"ADD_LINK"} },
-  { icon:"🔬", title:"Research Collaboration", meta:"Interdisciplinary", sub:"Evaluation & reporting", desc:"Write 5–7 lines about collaboration and what you delivered.", img1:"assets/ach/a5-1.jpg", img2:"assets/ach/a5-2.jpg", btn1:{label:"Proof", url:"ADD_LINK"}, btn2:{label:"Docs", url:"ADD_LINK"} },
-  { icon:"🤖", title:"Robotics Achievement", meta:"Automation", sub:"AI-based interaction workflow", desc:"Write 5–7 lines about robotics build, demos, and outcomes.", img1:"assets/ach/a6-1.jpg", img2:"assets/ach/a6-2.jpg", btn1:{label:"Video", url:"ADD_LINK"}, btn2:{label:"Proof", url:"ADD_LINK"} },
-  { icon:"🌟", title:"Community Recognition", meta:"Mentoring / Outreach", sub:"Helping & guidance", desc:"Write 5–7 lines on mentoring/outreach impact.", img1:"assets/ach/a7-1.jpg", img2:"assets/ach/a7-2.jpg", btn1:{label:"Proof", url:"ADD_LINK"}, btn2:{label:"Photos", url:"ADD_LINK"} },
-  { icon:"📈", title:"Growth Milestone", meta:"Professional", sub:"Skill + deliverables", desc:"Write 5–7 lines describing growth and results.", img1:"assets/ach/a8-1.jpg", img2:"assets/ach/a8-2.jpg", btn1:{label:"Proof", url:"ADD_LINK"}, btn2:{label:"Notes", url:"ADD_LINK"} },
-  { icon:"🎓", title:"Certification Highlights", meta:"Upskilling", sub:"AI/Full-stack certifications", desc:"Write 5–7 lines about certification journey & outcomes.", img1:"assets/ach/a9-1.jpg", img2:"assets/ach/a9-2.jpg", btn1:{label:"Proof", url:"ADD_LINK"}, btn2:{label:"All Certs", url:"ADD_LINK"} }
+  {
+    icon: "🏆",
+    title: "Best Researcher Award",
+    meta: "G20 Symposium 2023",
+    sub: "Graphic Era University & Olds College, Canada",
+    desc: "Recognized for exemplary contributions in the field of \"Robotics and Automation in Digital Agriculture\". Contributed to the symposium’s mission of enhancing global food security through innovative research. Organized in collaboration with Olds College, Canada.",
+    proofs: [
+      "https://media.licdn.com/dms/image/v2/D4D22AQH1swYfGxc3gw/feedshare-image-high-res/feedshare-image-high-res/0/1694894612553?e=2147483647&v=beta&t=icZ40YtiQVzJ4txqPc_3nmW3QKZT_D9GnB-ewv0XSv8",
+      "https://media.licdn.com/dms/image/v2/D4D22AQHt5btikLhk3w/feedshare-image-high-res/feedshare-image-high-res/0/1694894625335?e=2147483647&v=beta&t=6PS5YPSiZ0szOYPzinnEEuLH0QQijCGunFiJ7zWqUk8",
+      "https://media.licdn.com/dms/image/v2/D4D22AQEq2wJJYsj8NQ/feedshare-image-high-res/feedshare-image-high-res/0/1694894613650?e=2147483647&v=beta&t=x_oVa_ejOwaLsgkmD_uPeqlcftwAir3wzlg50ODJRco",
+      "https://media.licdn.com/dms/image/v2/D4D22AQGo_VUnY5Lh5g/feedshare-image-high-res/feedshare-image-high-res/0/1694894627049?e=2147483647&v=beta&t=eMYQQBAJn9NQXaJwQiv9cow3xLg63HbiHZ_DMW2jGiQ",
+      "https://media.licdn.com/dms/image/v2/D4D22AQGp5qy3QPqyEw/feedshare-image-high-res/feedshare-image-high-res/0/1694894612765?e=2147483647&v=beta&t=YgB2TnR8kZU6dr7nX-iv4_a_6x62xWKOtLxd5dNYMc4"
+    ],
+    btn1: { label: "View on LinkedIn", url: "https://lnkd.in/p/g_w8W-gD" }
+  },
+  {
+    icon: "🎙️",
+    title: "Invited as Session Chair and Lead Talk Speaker",
+    meta: "Organized by IIT Bombay",
+    sub: "2024 IEEE India Geoscience & Remote Sensing Symposium (IGRSS) • NIT Goa",
+    desc: "Presented at the prestigious 2024 IEEE India Geoscience and Remote Sensing Symposium (IGRSS), at NIT Goa Campus. Chaired the technical session on 'UAV/Drones and their Applications' and delivered the Lead Talk on Drone Applications representing Vaimanika Aerospace.",
+    proofs: [
+      "https://media.licdn.com/dms/image/v2/D5622AQEEkjxlKMjiTQ/feedshare-shrink_800/B56ZSMYZOPHsAg-/0/1737522004992?e=2147483647&v=beta&t=qCy1yWGRT-KASAKjEl9Bh3CrExa4saZW_SabjuD93mM"
+    ],
+    btn1: { label: "View on LinkedIn", url: "https://lnkd.in/p/g8kAwTfN" }
+  },
+  {
+    icon: "⚖️",
+    title: "Senior Judge at Galgotias International Hackathon",
+    meta: "Galgotias Institute of Technology, Greater Noida",
+    sub: "Galgotias International Hackathon",
+    desc: "Honored to serve as a Judge at the Galgotias International Hackathon—a full-circle moment that reinforced my commitment to leadership, learning, and innovation. Grateful to contribute to an inspiring ecosystem that empowers students to grow, evolve, and move forward with confidence.",
+    proofs: [
+      "https://media.licdn.com/dms/image/v2/D4E22AQFfY3fEl-otyw/feedshare-image-high-res/B4EZaW4YYnHkAs-/0/1746288085432?e=2147483647&v=beta&t=8z07ohWF8yqU_InBRKSF4IEo6jYCEX1eNMqSdz8MYvM"
+    ],
+    btn1: { label: "View on LinkedIn", url: "https://lnkd.in/p/gCqQG9ga" }
+  },
+  {
+    icon: "💡",
+    title: "Expert Talk Speaker",
+    meta: "Invited by Chitkara University, Punjab",
+    sub: "AI-Powered Personalization in Front-End Web Development",
+    desc: "Delivered an engaging expert talk on 'Artificial Intelligence (AI)-Powered Personalization in Front-End Web Development'. Shared insights on cutting-edge AI technologies and their applications in web development, inspiring and educating students and faculty about innovative solutions and future trends.",
+    proofs: [
+      "https://media.licdn.com/dms/image/v2/D5622AQG07ReAoXCfhQ/feedshare-image-high-res/feedshare-image-high-res/0/1731147767848?e=2147483647&v=beta&t=_3RwuJnj6Oo3Ab4Lpc0hjHq1SRKT2dzLj_ym1iputcc",
+      "https://media.licdn.com/dms/image/v2/D5622AQEowRMQkXhu_Q/feedshare-shrink_800/feedshare-shrink_800/0/1731147767591?e=2147483647&v=beta&t=OS07fLWuXoaha5A9DuE5MVxOBiUJGectf4J0NlA56lk",
+      "https://media.licdn.com/dms/image/v2/D5622AQE7AyqV1Bj7hg/feedshare-shrink_800/feedshare-shrink_800/0/1731147767578?e=2147483647&v=beta&t=F9B4IDh2lonsaStztBHjgc_SfgzzxvclwqpMI1F37Pg",
+      "https://media.licdn.com/dms/image/v2/D5622AQEtSYlyHjD-lQ/feedshare-image-high-res/feedshare-image-high-res/0/1731147767611?e=2147483647&v=beta&t=BAKG-2pdajns6b5WzciMDcCTdgEkfUlkW3tVbVWdmEw",
+      "https://media.licdn.com/dms/image/v2/D5622AQG-Yzbqgouumw/feedshare-shrink_800/feedshare-shrink_800/0/1731147767420?e=2147483647&v=beta&t=FGNR2wPq9JXx4FDItjdape6XL1Y2Nmm9JKMDD7V8QoM",
+      "https://media.licdn.com/dms/image/v2/D5622AQG78pnjRtkefQ/feedshare-shrink_800/feedshare-shrink_800/0/1731147767257?e=2147483647&v=beta&t=aDIjqhRMl31j8o11bi4rzBlHCAunSzNHf4G8BTH9VB0",
+      "https://media.licdn.com/dms/image/v2/D5622AQG2WJ9-vmpRzQ/feedshare-shrink_800/feedshare-shrink_800/0/1731147767291?e=2147483647&v=beta&t=AllKxa7pUf7HbMcSbVlcQg5oFUZIIlo_aUeNUEi3O_o",
+      "https://media.licdn.com/dms/image/v2/D5622AQHB3BcVUF2DLw/feedshare-shrink_800/feedshare-shrink_800/0/1731147767438?e=2147483647&v=beta&t=TKg56uK4iOw2hS1mQMWvoH2wQhUoJmWyMuNZLD52l1o",
+      "https://media.licdn.com/dms/image/v2/D5622AQG8K9aWBFZchA/feedshare-shrink_800/feedshare-shrink_800/0/1731147767596?e=2147483647&v=beta&t=0HqjKoNHkaeEDHbzDH-14fWEk_GLIooCjVNl6qxqNUQ"
+    ],
+    btn1: { label: "View on LinkedIn", url: "https://lnkd.in/p/grbb53X6" }
+  },
+  {
+    icon: "📝",
+    title: "Reviewer for ICACCM 2024",
+    meta: "Tula’s Institute, Dehradun • IEEE Standards",
+    sub: "International Conference on Advances in Computing, Communication, & Materials",
+    desc: "Served as a reviewer for the prestigious International Conference on Advances in Computing, Communication, and Materials (ICACCM 2024), hosted by Tula’s Institute, Dehradun, under the esteemed IEEE standards. Contributed to maintaining academic excellence by evaluating and providing feedback on submitted research papers.",
+    proofs: [
+      "https://media.licdn.com/dms/image/v2/D5622AQHjemp-OIH1kg/feedshare-shrink_800/B56ZPaFfY3G8Ag-/0/1734530721309?e=2147483647&v=beta&t=OtCrO2se3upLi_djPs4bkOyt5MmutHck1ccaMxCL-zQ"
+    ],
+    btn1: { label: "View on LinkedIn", url: "https://lnkd.in/p/gTEB9NFw" }
+  },
+  {
+    icon: "🚀",
+    title: "Honored to Speak at BIT Mesra’s Rocket Tech Workshop",
+    meta: "Birla Institute of Technology, Mesra Ranchi",
+    sub: "2-Day Workshop on Rocket Technologies",
+    desc: "BIT Mesra, Ranchi organized a 2-day workshop on Rocket Technologies, where I was honored to be invited by the HOD and given the opportunity to participate as a guest speaker.",
+    proofs: [
+      "https://media.licdn.com/dms/image/v2/D5622AQEDplAOLvEONw/feedshare-shrink_800/B56ZbFyCLpGkAg-/0/1747074953587?e=2147483647&v=beta&t=nAjAuH3KpxxM-qY8lfA55mdw7JlJUgEzXlqV0bA9wgs",
+      "https://media.licdn.com/dms/image/v2/D5622AQHwjLPmi6MaDg/feedshare-shrink_800/B56ZbFyCLdGgAk-/0/1747074950815?e=2147483647&v=beta&t=rZf4C8ELiO30xQAHaCfe_FZWCVGJhmrtbEMpECoFEak",
+      "https://media.licdn.com/dms/image/v2/D5622AQH9Xjwokuli3A/feedshare-shrink_800/B56ZbFyCLrH4Ag-/0/1747074953028?e=2147483647&v=beta&t=JrFMA1ax-q1sLgd5zMiaaFCAnFbzqVqt4X8AiVuHgyY",
+      "https://media.licdn.com/dms/image/v2/D5622AQG-6zyn9xIaWA/feedshare-shrink_800/B56ZbFyCMCHgAg-/0/1747074953480?e=2147483647&v=beta&t=Sy2vtWFTnOeu0MRxhOfGeYdsdKkkbMgZetkMTBypjR8",
+      "https://media.licdn.com/dms/image/v2/D5622AQGMAZkW-XknAA/feedshare-image-high-res/B56ZbFyCMMHUAs-/0/1747074953960?e=2147483647&v=beta&t=kRr0K6wGipI5j8858kNAL-yLJwK-lws_yDzo878npN4",
+      "https://media.licdn.com/dms/image/v2/D5622AQH7UrP5BkYWwQ/feedshare-shrink_800/B56ZbFyCMNGkAg-/0/1747074954163?e=2147483647&v=beta&t=r_aAfC9S7mde-BhBRS3M-suTaheqj2upcb-Z4qrpknQ"
+    ],
+    btn1: { label: "View on LinkedIn", url: "https://lnkd.in/p/gkfSA7TA" }
+  },
+  {
+    icon: "🌟",
+    title: "Distinguished Speaker at Galgotias International Hackathon",
+    meta: "Galgotias Institute of Technology, Greater Noida",
+    sub: "Galgotias International Hackathon 2025 (9th–10th May)",
+    desc: "Honored to be invited as a Distinguished Speaker at the Galgotias International Hackathon 2025, held on 9th–10th May. It was a proud moment to share my journey and insights with some of the brightest young innovators. Grateful for the opportunity to contribute to such a prestigious platform in the tech and innovation space.",
+    proofs: [
+      "https://media.licdn.com/dms/image/v2/D4E22AQFfY3fEl-otyw/feedshare-image-high-res/B4EZaW4YYnHkAs-/0/1746288085432?e=2147483647&v=beta&t=8z07ohWF8yqU_InBRKSF4IEo6jYCEX1eNMqSdz8MYvM"
+    ],
+    btn1: { label: "View on LinkedIn", url: "https://lnkd.in/p/gCqQG9ga" }
+  },
+  {
+    icon: "🌐",
+    title: "Invited Speaker, Nano S&T–2026 World Congress",
+    meta: "15th Annual World Congress of Nano Science & Technology",
+    sub: "Osaka, Japan • June 16–18, 2026",
+    desc: "Formally invited to deliver an oral presentation at the 15th Annual World Congress of Nano Science & Technology (Nano S&T–2026), scheduled for June 16–18, 2026, in Osaka, Japan. Selected to represent India on a global scientific platform, presenting research at the intersection of Nanotechnology, Artificial Intelligence, and Healthcare Robotics.",
+    proofs: [
+      "https://media.licdn.com/dms/image/v2/D5622AQEWu2MwKfEOxQ/feedshare-image-high-res/B56ZsYdtFvGsAo-/0/1765642001283?e=2147483647&v=beta&t=7KeFK2GPgEnq8LztpTazfV8PkvxeZtjrvyt0x7Sqxp8",
+      "https://media.licdn.com/dms/image/v2/D5622AQGJAu16NI8umA/feedshare-image-high-res/B56ZsYdtF8HIAo-/0/1765642000723?e=2147483647&v=beta&t=H4T6o7vf2cSuy0ertRCV93K_6HGY8J3kLr2YJ6YdCaY"
+    ],
+    btn1: { label: "View on LinkedIn", url: "https://lnkd.in/p/gj-ivkfr" }
+  },
+  {
+    icon: "🔍",
+    title: "Reviewer, ACDSA 2026 International Conference",
+    meta: "European Council of Engineering (ECER)",
+    sub: "ACDSA 2026 • Boracay Island, Philippines (Feb 05–07, 2026)",
+    desc: "Selected and officially certified as a peer reviewer for the International Conference on Artificial Intelligence, Computer, Data Sciences and Applications (ACDSA 2026), scheduled for February 05–07, 2026, in Boracay Island, Philippines. Contributed to the technical review and evaluation of research submissions in the domains of Artificial Intelligence and Data Science.",
+    proofs: [
+      "https://media.licdn.com/dms/image/v2/D5622AQF1_7GGvv1BmA/feedshare-shrink_1280/B56ZqsyW9cHIAw-/0/1763835474702?e=2147483647&v=beta&t=B2luf0LGU5pNHUWb_dEyhVzCA7mcAsd3LtuVi101dw4"
+    ],
+    btn1: { label: "View on LinkedIn", url: "https://lnkd.in/p/gqKTeW26" }
+  },
+  {
+    icon: "🩺",
+    title: "Reviewer, Frontiers in Medicine (Q1 Journal)",
+    meta: "Frontiers Media SA",
+    sub: "Q1 Ranked • Impact Factor: 3.0 • CiteScore: 6.0",
+    desc: "Officially recognized and certified for serving as a peer reviewer for Frontiers in Medicine, a Q1-ranked international journal with an Impact Factor of 3.0 and a CiteScore of 6.0. Contributed to the rigorous evaluation of research manuscripts, supporting high-quality scholarly publishing and advancing medical research.",
+    proofs: [
+      "https://media.licdn.com/dms/image/v2/D5622AQG0WGKi4hQCmw/feedshare-image-high-res/B56ZqB6OraJsAo-/0/1763116117579?e=2147483647&v=beta&t=DSE6nAFKChsVhXPGsY_kGzIKpuxAO4ahHAE3PTKRuR8"
+    ],
+    btn1: { label: "View on LinkedIn", url: "https://lnkd.in/p/gGqd8AbQ" }
+  },
+  {
+    icon: "⚡",
+    title: "Reviewer, ICECET 2026 International Conference",
+    meta: "European Council of Engineering (ECER)",
+    sub: "Rome, Italy • IEEE Conference Standards",
+    desc: "Selected and officially certified as a Review Committee Member for the International Conference on Electrical, Computer and Energy Technologies (ICECET 2026), held in Rome, Italy. Contributed to the peer-review process of an IEEE international conference and successfully reviewed two research papers, critically evaluating innovative ideas, emerging technologies, and impactful research in the domains of Electrical, Computer, and Energy Technologies.",
+    proofs: [
+      "https://media.licdn.com/dms/image/v2/D5622AQE45W5HcrRyNA/feedshare-image-high-res/B56ZxOP6KIIoAY-/0/1770839319528?e=2147483647&v=beta&t=gNIaUU4pnW-fZ5F3BrWWyLosvwx1NYCM78KfG6KcsCc"
+    ],
+    btn1: { label: "View on LinkedIn", url: "https://lnkd.in/p/gAzQqEYp" }
+  },
+  {
+    icon: "🥇",
+    title: "International Hackathon Excellence (First Position from India)",
+    meta: "Galgotias College, Greater Noida",
+    sub: "Overall 2nd Position & 1st from India • 36-Hour Global Competition",
+    desc: "Secured the Overall Second Position at the Galgotias International Hackathon (GIH), a 36-hour global competition, and proudly achieved the First Position from India, demonstrating exceptional innovation, technical expertise, and problem-solving skills on an international stage.",
+    proofs: [
+      "https://media.licdn.com/dms/image/v2/D5622AQHO1jrhBRC-vA/feedshare-shrink_800/feedshare-shrink_800/0/1718384675531?e=2147483647&v=beta&t=2ZOSpIhHRqLIoUy_7trnmrTUaNl5lohfyqD2XPQWyBs",
+      "https://media.licdn.com/dms/image/v2/D5622AQEOTh1PAjIb6w/feedshare-shrink_800/feedshare-shrink_800/0/1718384614367?e=2147483647&v=beta&t=_tqUvlf2XqGty-_6PWh5K-J9WsqmjGh_5nCB4Gbe4A4",
+      "https://media.licdn.com/dms/image/v2/D5622AQGCGPWl-TQhVQ/feedshare-shrink_800/feedshare-shrink_800/0/1718384605318?e=2147483647&v=beta&t=eX56Wfz_mGqPfShBeX-YJPKy3XPbdc_YL4D8vmZNxAg",
+      "https://media.licdn.com/dms/image/v2/D5622AQFh6Seo_BVfrQ/feedshare-image-high-res/feedshare-image-high-res/0/1718384605478?e=2147483647&v=beta&t=QmtwLMXZt_dzv755v62avN77Ajy_zuKY-9aTPRz2d2A"
+    ],
+    btn1: { label: "View on LinkedIn", url: "https://lnkd.in/p/gvNatQ8H" }
+  }
 ];
 
 // BLOGS (local + optional external RSS)
@@ -572,7 +779,7 @@ hero_featured_sub: "Add a big hero poster image here (code link)",
     sec_linkedin: "LinkedIn Posts",
     sec_linkedin_sub: "Last 4–5 posts cards (manual links or embed snippet).",
     sec_publications: "Publications",
-    sec_publications_sub: "Each item: title/subtitle/meta + 5 lines + 2 buttons + 2 images (optional).",
+    sec_publications_sub: "Peer-reviewed conference papers, journals, and book chapters.",
     sec_patents: "Patents",
     sec_patents_sub: "Each item: 2 buttons (View + Portal) + optional images.",
     sec_bookchapter: "Book Chapter",
@@ -580,7 +787,7 @@ hero_featured_sub: "Add a big hero poster image here (code link)",
     sec_editedbook: "Edited Book",
     sec_editedbook_sub: "Each item has 2 buttons + description + optional images.",
     sec_achievements: "Recognition & Achievements",
-    sec_achievements_sub: "9 achievements • BIG premium 3D cards • 2 images + 2 links each.",
+    sec_achievements_sub: "Key honors, keynote speaker sessions, session chairs & international recognitions.",
     sec_contact: "Contact",
     sec_contact_sub: "Let’s collaborate — AI, full-stack, robotics, research.",
 
@@ -717,7 +924,7 @@ hero_featured_sub: "यहाँ बड़ा हीरो पोस्टर �
     sec_linkedin: "लिंक्डइन पोस्ट",
     sec_linkedin_sub: "पिछले 4–5 पोस्ट कार्ड (मैनुअल लिंक या एम्बेड स्निपेट)।",
     sec_publications: "प्रकाशन",
-    sec_publications_sub: "प्रत्येक आइटम: शीर्षक/उपशीर्षक/मेटा + 5 लाइनें + 2 बटन + 2 इमेज (वैकल्पिक)।",
+    sec_publications_sub: "सहकर्मी-समीक्षित सम्मेलन पत्र, शोध पत्रिकाएँ और पुस्तक अध्याय।",
     sec_patents: "पेटेंट",
     sec_patents_sub: "प्रत्येक आइटम: 2 बटन (देखें + पोर्टल) + वैकल्पिक इमेज।",
     sec_bookchapter: "पुस्तक अध्याय",
@@ -1490,21 +1697,40 @@ if (linkGrid){
 // =====================
 function renderSkills(elId, items){
   const el = document.getElementById(elId);
-  if (!el) return;
-  el.innerHTML = items.map(it => `
-    <div class="logoItem">
-      <i class="${escapeHtml(it.icon)}"></i>
-      <span>${escapeHtml(it.name)}</span>
-    </div>
-  `).join("");
+  if (!el || !items) return;
+  el.innerHTML = items.map(it => {
+    let iconMarkup = "";
+    if (it.svg) {
+      iconMarkup = it.svg;
+    } else if (it.icon && it.icon.startsWith("<svg")) {
+      iconMarkup = it.icon;
+    } else if (it.icon) {
+      iconMarkup = `<i class="${escapeHtml(it.icon)}"></i>`;
+    }
+    return `
+      <div class="logoItem">
+        ${iconMarkup}
+        <span>${escapeHtml(it.name)}</span>
+      </div>
+    `;
+  }).join("");
 }
+renderSkills("skillsLanguages", SKILLS.languages);
 renderSkills("skillsLang", SKILLS.languages);
-renderSkills("skillsStack", SKILLS.stack);
+
+renderSkills("skillsAIPlatforms", SKILLS.aiPlatforms);
+renderSkills("skillsAI", SKILLS.aiPlatforms);
+
+renderSkills("skillsDatabase", SKILLS.database);
+renderSkills("skillsStack", SKILLS.database);
+
+renderSkills("skillsLibraries", SKILLS.libraries);
+renderSkills("skillsCloud", SKILLS.libraries);
+
 renderSkills("skillsTools", SKILLS.tools);
-// EXTRA SKILLS (below) — change arrays in SKILLS.ai / SKILLS.cloud / SKILLS.research
-renderSkills("skillsAI", SKILLS.ai || []);
-renderSkills("skillsCloud", SKILLS.cloud || []);
-renderSkills("skillsResearch", SKILLS.research || []);
+
+renderSkills("skillsPlatforms", SKILLS.platforms);
+renderSkills("skillsResearch", SKILLS.platforms);
 
 // =====================
 // Count-up stats (fixed bug)
@@ -1962,21 +2188,32 @@ if (v){
 // =====================
 // 2-button list renderer (with optional 2 images)
 // =====================
+function formatItemText(text){
+  if (!text) return "";
+  let s = escapeHtml(text);
+  // Highlight author: Bharadwaj, Y. or Bharadwaj, Y
+  s = s.replace(/(Bharadwaj,\s*Y\.?)/gi, '<strong class="highlight-author">$1</strong>');
+  // Highlight inventor role: (1st Inventor), (2nd Inventor), etc.
+  s = s.replace(/(\(\s*(?:1st|2nd|3rd|\d+(?:st|nd|rd|th))\s+Inventor\s*\))/gi, '<strong class="highlight-inventor">$1</strong>');
+  return s;
+}
+
 function renderTwoBtnList(elId, arr){
   const el = document.getElementById(elId);
   if (!el) return;
 
   el.innerHTML = arr.map(item => `
     <div class="itemCard tilt">
-      <div class="itemTitle">${escapeHtml(item.title)}</div>
-      ${item.subtitle ? `<div class="itemSub">${escapeHtml(item.subtitle)}</div>` : ""}
-      <div class="itemMeta">${escapeHtml(item.meta || "")}</div>
-      <div class="itemDesc">${escapeHtml(item.desc || "")}</div>
+      <div class="itemTitle">${formatItemText(item.title)}</div>
+      ${item.subtitle ? `<div class="itemSub">${formatItemText(item.subtitle)}</div>` : ""}
+      <div class="itemMeta">${formatItemText(item.meta || "")}</div>
+      <div class="itemDesc">${formatItemText(item.desc || "")}</div>
 
+      ${(item.img1 || item.img2) ? `
       <div class="itemMedia2">
-        <div class="miniImg"><img src="${escapeHtml(item.img1 || "")}" alt="image 1" onerror="this.closest('.miniImg').style.display='none'"></div>
-        <div class="miniImg"><img src="${escapeHtml(item.img2 || "")}" alt="image 2" onerror="this.closest('.miniImg').style.display='none'"></div>
-      </div>
+        ${item.img1 ? `<div class="miniImg"><img src="${escapeHtml(item.img1)}" alt="image 1" onerror="this.closest('.miniImg').style.display='none'"></div>` : ""}
+        ${item.img2 ? `<div class="miniImg"><img src="${escapeHtml(item.img2)}" alt="image 2" onerror="this.closest('.miniImg').style.display='none'"></div>` : ""}
+      </div>` : ""}
 
       <div class="actionRow">
         <a class="linkBtn primary" href="${safeUrl(item.btn1?.url)}" target="_blank" rel="noopener">${escapeHtml(item.btn1?.label || "View")}</a>
@@ -1989,6 +2226,19 @@ function renderTwoBtnList(elId, arr){
 }
 
 renderTwoBtnList("pubList", PUBLICATIONS);
+
+// Slow down Publications background video
+const pubVideo = document.querySelector("#publications video");
+if (pubVideo) {
+  pubVideo.playbackRate = 0.55;
+  pubVideo.addEventListener("loadedmetadata", () => {
+    pubVideo.playbackRate = 0.55;
+  });
+  pubVideo.addEventListener("play", () => {
+    pubVideo.playbackRate = 0.55;
+  });
+}
+
 renderTwoBtnList("patentList", PATENTS);
 renderTwoBtnList("chapterList", BOOK_CHAPTERS);
 renderTwoBtnList("editedBookList", EDITED_BOOKS);
@@ -2081,20 +2331,18 @@ if (achGrid){
 
         <!-- Proof image (passport size) + nav buttons -->
         <div class="proofRow" data-ach="${idx}">
-          <button class="proofNavBtn" data-proof="prev" aria-label="Previous proof">‹</button>
+          <button class="proofNavBtn" data-proof="prev" aria-label="Previous proof" type="button">‹</button>
           <div class="proofFrame">
-            <img class="proofImg" src="${safeText(a.proofs[0] || "", "")}" alt="Proof image"/>
+            <img class="proofImg" src="${safeText(a.proofs[0] || "", "")}" alt="${escapeHtml(a.title)} proof" loading="lazy"/>
           </div>
-          <button class="proofNavBtn" data-proof="next" aria-label="Next proof">›</button>
-          <div class="muted" style="font-size:12px;margin-left:auto">Proof</div>
+          <button class="proofNavBtn" data-proof="next" aria-label="Next proof" type="button">›</button>
+          <div class="muted proofCounter" style="font-size:12px;margin-left:auto;white-space:nowrap">${a.proofs.length > 0 ? `1 / ${a.proofs.length}` : 'Proof'}</div>
         </div>
 
         <div class="btnRow" style="margin-top:14px">
-          ${a.btn1?.url ? `<a class="btn" href="${safeUrl(a.btn1.url)}" target="_blank" rel="noopener">${escapeHtml(a.btn1.label || "Link 1")}</a>` : ""}
-          ${a.btn2?.url ? `<a class="btn ghost" href="${safeUrl(a.btn2.url)}" target="_blank" rel="noopener">${escapeHtml(a.btn2.label || "Link 2")}</a>` : ""}
+          ${a.btn1?.url ? `<a class="btn primary" href="${safeUrl(a.btn1.url)}" target="_blank" rel="noopener">${escapeHtml(a.btn1.label || "View on LinkedIn")}</a>` : `<a class="btn primary" href="#" target="_blank" rel="noopener">View on LinkedIn</a>`}
+          <!-- <a class="btn ghost" href="#" target="_blank" rel="noopener">Proof / Gallery</a> -->
         </div>
-
-        <div class="proofHint">Tip: Add more proofs by using <b>proofs: [ ... ]</b> in script.js</div>
       </div>
     </div>
   `).join("");
@@ -2103,12 +2351,15 @@ if (achGrid){
   const state = new Map();
   const setImg = (row, dir) => {
     const idx = Number(row.dataset.ach);
-    const proofs = normalized[idx].proofs || [];
+    const proofs = normalized[idx]?.proofs || [];
     if (!proofs.length) return;
     const cur = state.get(idx) ?? 0;
     const next = (cur + dir + proofs.length) % proofs.length;
     state.set(idx, next);
-    row.querySelector(".proofImg").src = safeText(proofs[next], "");
+    const imgEl = row.querySelector(".proofImg");
+    if (imgEl) imgEl.src = safeText(proofs[next], "");
+    const counterEl = row.querySelector(".proofCounter");
+    if (counterEl) counterEl.textContent = `${next + 1} / ${proofs.length}`;
   };
 
   achGrid.addEventListener("click", (e) => {
@@ -2238,7 +2489,7 @@ document.querySelectorAll(".card3d").forEach((el) => attachTilt(el, 16));
 const SEARCH_INDEX = [
   { id:"home", title:"Home", keywords:["hero","summary","profile","stats","banner"] },
   { id:"about", title:"About", keywords:["about","who i am","focus","tools"] },
-  { id:"skills", title:"Skills", keywords:["skills","technical","stack","python","mern","react","node","docker"] },
+  { id:"skills", title:"Skills", keywords:["skills","technical","stack","languages","c++","javascript","sql","python","machine learning","generative ai","jupyter","colab","deep learning","rag","hugging face","langchain","langgraph","transformers","api","agentic ai","database","mongodb","vector database","pytorch","streamlit","pandas","matplotlib","seaborn","plotly","numpy","os","scikit-learn","dax","git","github","docker","powerbi","platforms","linux","web","mac","windows","arduino","raspberry pi","esp-32"] },
   { id:"experience", title:"Experience", keywords:["experience","intern","geu","visit uttarakhand","work"] },
   { id:"education", title:"Education", keywords:["education","iit patna","geu","btech","mtech"] },
   { id:"projects", title:"Projects", keywords:["projects","github","live","deployed"] },
@@ -2246,8 +2497,8 @@ const SEARCH_INDEX = [
   { id:"glimpse", title:"Video Glimpse", keywords:["video","glimpse","demo","showreel"] },
   { id:"blogs", title:"Blogs", keywords:["blog","articles","posts","medium","rss"] },
   { id:"linkedin", title:"LinkedIn Posts", keywords:["linkedin","posts","updates"] },
-  { id:"publications", title:"Publications", keywords:["publication","paper","research","crc press"] },
-  { id:"patents", title:"Patents", keywords:["patent","ipr","published"] },
+  { id:"publications", title:"Publications", keywords:["publication","paper","research","crc press","ieee","aip","robot","cough classification","gas and fire detection","virtual doctor"] },
+  { id:"patents", title:"Patents", keywords:["patent","ipr","published","marine vessel","plant growth","drone navigation","heartbeat alarm","service robot","saline level","202531085495","468807-001","202431066275","202411032877","202411035697","202411051991"] },
   { id:"bookchapter", title:"Book Chapter", keywords:["book chapter","chapter"] },
   { id:"editedbook", title:"Edited Book", keywords:["edited book","editor"] },
   { id:"achievements", title:"Recognition", keywords:["achievement","award","recognition","speaker","reviewer","hackathon"] },
