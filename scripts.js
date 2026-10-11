@@ -298,9 +298,28 @@ const CERT_SLIDES = [
 // NEW: Recommendations (images + LinkedIn)
 // =====================
 const RECOMMENDATIONS = [
-  { title:"Recommendation 1", from:"Name • Role • Company", text:"Paste recommendation text here (2-5 lines).", img:"assets/reco/r1.jpg", source:"LinkedIn" },
-  { title:"Recommendation 2", from:"Name • Role • Company", text:"Paste recommendation text here (2-5 lines).", img:"assets/reco/r2.jpg", source:"Image proof" },
-  { title:"Recommendation 3", from:"Name • Role • Company", text:"Paste recommendation text here (2-5 lines).", img:"assets/reco/r3.jpg", source:"LinkedIn" },
+  {
+    title: "Prof. T. N. Singh",
+    from: "Director, IIT Patna",
+    fromHtml: `<span style="font-weight:900;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;">Director</span>, <span style="font-weight:700;color:#a5c4ff;">Indian Institute of Technology, (IIT Patna)</span>`,
+    text: "Prof. T. N. Singh highly recommends Yogendra for his exceptional research contributions, innovative AI solutions, and leadership in academic projects.",
+    img: "https://raw.githubusercontent.com/bh-yogendra1/Yogendra-Bh_pm/9a8125f2eba752c012d127a437605a3ee440485c/assets/reco/r1.jpg",
+    source: "Official Letter",
+    pdfUrl: "https://drive.google.com/file/d/1IraRrVcC82CEQfJ5_sj8uAIeUMppP_4k/view",
+    pdfEmbed: "https://drive.google.com/file/d/1IraRrVcC82CEQfJ5_sj8uAIeUMppP_4k/preview"
+  },
+    { title:"Prof. (Dr.) Devesh Pratap Singh", from:"Department (HoD) for Computer Science and Engineering (CSE)", fromHtml:`<span style="font-weight:900;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;">Department (HoD)</span>, <span style="font-weight:700;color:#a5c4ff;">Computer Science and Engineering (CSE)</span>`, text:"Highly commendable recommendation acknowledging outstanding research, academic excellence, and innovative AI contributions.", img:"https://raw.githubusercontent.com/bh-yogendra1/Yogendra-Bh_pm/9a8125f2eba752c012d127a437605a3ee440485c/assets/reco/r2.jpg", source:"Official Letter", pdfUrl:"https://drive.google.com/file/d/1TyL_1do88eUVGk60Fcs6T9tZ1iE8hcAd/view?usp=sharing", pdfEmbed:"https://drive.google.com/file/d/1TyL_1do88eUVGk60Fcs6T9tZ1iE8hcAd/preview" },
+    {
+        title: "Dr. Neha Tripathi",
+        from: "Associate Professor, Acting HOD, Department of Computer Science and Engineering, Graphic Era Deemed to be University",
+        fromHtml: `<span style="font-weight:900;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;">Associate Professor</span>, <span style="font-weight:700;color:#a5c4ff;">Acting HOD, Department of Computer Science and Engineering, Graphic Era Deemed to be University</span>`,
+        text: "Dr. Neha Tripathi highly recommends Yogendra for outstanding academic achievements and research excellence in Computer Science and Engineering.",
+        img: "https://raw.githubusercontent.com/bh-yogendra1/Yogendra-Bh_pm/main/neha%20tripathi%20am%20geu%20recomendtion.pdf",
+        source: "Official Letter",
+        pdfUrl: "https://drive.google.com/file/d/1kpPmq-bcdlWVw7IBVqN9KFRh-Nj7FgOm/view?usp=sharing",
+        pdfEmbed: "https://drive.google.com/file/d/1kpPmq-bcdlWVw7IBVqN9KFRh-Nj7FgOm/preview"
+    },
+  /* { title:"Recommendation 3", from:"Name • Role • Company", text:"Paste recommendation text here (2-5 lines).", img:"assets/reco/r3.jpg", source:"LinkedIn" }, */
 ];
 
 
@@ -2080,11 +2099,23 @@ function renderRecommendations(){
   if (!grid) return;
   grid.innerHTML = RECOMMENDATIONS.map(r => `
     <div class="recCard tilt-sm">
-      <div class="recImg"><img src="${safeText(r.img,"")}" alt="${escapeHtml(r.title)}"/></div>
+      ${r.pdfEmbed ? `
+      <div class="recPdfWrap">
+        <iframe
+          src="${safeUrl(r.pdfEmbed)}"
+          class="recPdfFrame"
+          frameborder="0"
+          allowfullscreen
+          title="Recommendation letter from ${escapeHtml(r.title)}"
+          loading="lazy"
+        ></iframe>
+      </div>` : `<div class="recImg"><img src="${safeText(r.img,"")}" alt="${escapeHtml(r.title)}"/></div>`}
       <div class="recBody">
         <div class="recTitle">${escapeHtml(r.title)}</div>
+        ${r.fromHtml ? `<div class="recRole" style="margin-top:6px;font-size:13px;line-height:1.5;">${r.fromHtml}</div>` : ""}
         <div class="recText">${escapeHtml(r.text || "")}</div>
-        <div class="recFrom">— ${escapeHtml(r.from || "")} • ${escapeHtml(r.source || "")}</div>
+        <div class="recFrom">&nbsp;<span style="font-size:11px;opacity:.7">• ${escapeHtml(r.source || "")}</span></div>
+        ${r.pdfUrl ? `<div style="margin-top:12px"><a class="btn primary" href="${safeUrl(r.pdfUrl)}" target="_blank" rel="noopener" style="font-size:13px;padding:9px 16px;">📄 View Recommendation Letter</a></div>` : ""}
       </div>
     </div>
   `).join("");
